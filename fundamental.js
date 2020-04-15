@@ -321,3 +321,64 @@ arr; // [1, 2, 3]
 var emptyArr = [];
 pop(emptyArr); // undefined
 emptyArr.length; // 0
+
+
+
+// 014 - Fundamentals: unshift
+
+// Write a function called unshift which accepts an array and a value and adds the value to the beginning of the array.This function should return the new length of the array.
+
+// Do not use the built in Array.unshift() function!
+
+function unshift(arr, value) {
+
+  for (let i = arr.length - 1; i >= 0; --i) {
+    let current = arr[i]
+    arr[i + 1] = current;
+  }
+
+  console.log(arr)
+  arr[0] = value;
+  console.log(arr)
+
+  return arr.length;
+}
+
+// Examples:
+
+var arr = [1, 2, 3];
+unshift(arr, 0); // 4
+arr; // [0, 1, 2, 3]
+
+unshift([4, 5, 6], 10); // 4
+
+
+// 015 - Fundamentals: shift
+
+// Write a function called shift which accepts an array and removes the first value in the array and then returns the value removed. It should return undefined if the array is empty.
+
+// Do not use the built in shift function!
+
+function shift(arr) {
+
+  if (arr.length === 0) {
+    return undefined;
+  }
+
+  let shifted = arr.splice(0, 1)
+                  .join();
+
+  return shifted;
+
+
+
+}
+
+var arr = ["a", "b", "c"];
+shift(arr); // "a"
+arr; // ["b","c"]
+
+var emptyArr = [];
+shift(emptyArr); // undefined
+emptyArr.length; // 0
+

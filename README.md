@@ -388,4 +388,35 @@ unshift(arr, 0); // 4
 
 ```
 
+### shift
+```JavaScript
+// Write a function called shift which accepts an array and removes the first value in the array and then returns the value removed. It should return undefined if the array is empty.
+
+// Do not use the built in shift function!
+
+function shift(arr) {
+
+  if (arr.length === 0) {
+    return undefined;
+  }
+
+  let shifted = arr.splice(0, 1)
+                  .join();
+
+  return shifted;
+
+
+
+}
+
+var arr = ["a", "b", "c"];
+shift(arr); // "a"
+// arr; // ["b","c"]
+
+var emptyArr = [];
+shift(emptyArr); // undefined
+// emptyArr.length; // 0
+
+```
+
 
