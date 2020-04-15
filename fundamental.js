@@ -477,3 +477,36 @@ function min(arr){
 // Examples:
 min([5, 1, 4, 7, 1, 2]); // 1
 min([-1, 6, 3, 2.2, -10, -4]); // -10
+
+
+// 019 - Fundamentals: slice
+
+// Write a function called slice, which accepts an array, and two numbers.
+
+// The function should return a new array with the elements starting at the index of the first number and going until the index of the second number.
+
+// If a third parameter is not passed to the function, it should slice until the end of the array by default. gIf the third parameter is greater than the length of the array, it should slice until the end of the array.
+
+// Do not use the built in Array.slice() function!
+
+
+function slice(arr, start, end){
+
+  let newArr = [];
+
+  for(let i = start; i < end; i++){
+    let current = arr[i];
+
+    result.push(current)
+  }
+
+
+  return result
+}
+
+// Examples:
+
+slice([1, 2, 3, 4, 5], 0, 2); // [1, 2]
+slice([1, 2, 3, 4, 5], 2, 4); // [3, 4]
+slice([1, 2, 3, 4, 5], 2); // [3, 4, 5]
+slice([1, 2, 3, 4, 5], 2, 10); // [3, 4, 5]
