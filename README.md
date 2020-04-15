@@ -27,6 +27,7 @@ This repo covers the following:
 - [Fundamentals: swapKeyAndValue](#swapKeyAndValue)
 - [Fundamentals: entries](#entries)
 - [Fundamentals: every](#every)
+- [Fundamentals: some](#some)
 
 
 ## JS Fundamentals
@@ -768,6 +769,34 @@ function every(arr, cb){
 
 // Examples:
 
+every([1, 2, 3, 4, 5], function(val) {
+ return val > 0;
+}); // true
+
+every([1, 2, 3, 4, 5], function(val) {
+ return val < 2;
+}); // false
+
+```
+### Some
+```JavaScript
+// Write a function called every which accepts an array and a callback function. The function should return true if all values in the array passed to the callback return true, otherwise return false.
+
+// Do not use the built in every function, the tests will fail!
+function some(arr, cb){
+
+  for(let i = 0; i < arr.length; i++){
+    let current = arr[i];
+
+    if(cb(current)){
+      return true;
+    }
+  }
+
+  return false;
+}
+
+// Examples:
 every([1, 2, 3, 4, 5], function(val) {
  return val > 0;
 }); // true
