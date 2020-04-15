@@ -454,3 +454,41 @@ reverse([]); // []
 ```
 
 
+### max
+```JavaScript
+
+// Write a function called max, which accepts an array and returns the highest value.
+
+// Do not use the built-in Math.max() function!
+
+function max(arr){
+
+  if(arr.length === 0){
+    return undefined;
+  }
+
+  let max = arr[0]
+
+  for(let i =1; i < arr.length; i++){
+    let current = arr[i];
+
+    if(current > max){
+      max = current
+    }
+  }
+
+  return max;
+}
+
+// Examples:
+
+max([5, 1, 4, 7, 1, 2]); // 7
+max([3, 4, 12, 1, 8]); // 12
+max([-1, 6, 3, 2.2, -10, -4]); // 6
+
+
+```
+
+
+
+
