@@ -382,3 +382,35 @@ var emptyArr = [];
 shift(emptyArr); // undefined
 emptyArr.length; // 0
 
+
+
+// 016 - Fundamentals: reverse
+
+// Write a function called reverse, which accepts an array and returns the same array with all of the values reversed. In other words, do not solve this by creating a new array.
+
+// Note: returning the same array is called an in-place operation, since no additional space is used. https://en.wikipedia.org/wiki/In-place_algorithm
+
+// Do not use the built in Array.reverse() function!
+
+function reverse(arr){
+
+  let first = 0;
+  let last = arr.length -1;
+  let temp;
+
+  while(last > first){
+    temp = arr[first]
+    arr[first] = arr[last]
+    arr[last] = temp;
+
+    first++
+    last--
+  }
+
+  return arr;
+
+}
+
+// Examples:
+reverse([7,6, 5, 4, 3, 2, 1]); // [1, 2, 3, 4, 5]
+reverse([]); // []
