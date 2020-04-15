@@ -133,12 +133,12 @@ stringLastIndexOf('awesome', 'z'); // -1
 
 // Do not use the built in repeat method - the tests will fail if you do!
 
-function repeat(str, times){
+function repeat(str, times) {
 
   let result = ''
 
-  while(times > 0){
-    result+= str;
+  while (times > 0) {
+    result += str;
     times--
   }
 
@@ -159,14 +159,14 @@ repeat('Michael', 0) // ''
 
 // The function should return a new string with the characters removed.
 
-function removeFromString(string,index,number){
+function removeFromString(string, index, number) {
   let newStr = string.split('');
 
-  newStr.splice(index,number)
-        .join('')
+  newStr.splice(index, number)
+    .join('')
 
   return newStr;
-  }
+}
 
 // Examples:
 
@@ -183,24 +183,54 @@ removeFromString('Rithm School', 6, 400) // 'Rithm '
 
 // Do not use the built in Array.includes() function!
 
-function includes(arr, number){
+function includes(arr, number) {
 
-  for(let i = 0; i < arr.length; i++){
+  for (let i = 0; i < arr.length; i++) {
     let current = arr[i];
 
-    if(current === number){
+    if (current === number) {
       return true;
     }
   }
 
-
   return false
 }
-
-
 
 // Examples:
 
 includes([1, 2, 3, 4], 4) // true
 includes([1, 2, 3, 4], 14) // false
 includes([], 14) // false
+
+
+
+// 009 - Fundamentals: indexOf
+
+// Write a function called indexOf, which accepts an array and a number. The function should return the index of the number if the value exists in the array and -1 if it does not exist
+
+// Do not use the built in Array.indexOf() function!
+
+
+function indexOf(arr, number) {
+
+  for (let i = 0; i <= arr.length; i++) {
+    let current = arr[i]
+
+    if (current === number) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+
+
+var arr = [5, 10, 15, 20];
+indexOf(arr, 20); // 3
+
+var arr2 = [1, 2, 3, 4, 5];
+indexOf(arr2, 2); // 1
+
+var arr3 = [1, 2];
+indexOf(arr3, 10); // -1

@@ -12,6 +12,7 @@ This repo covers the following:
 - [Fundamentals: repeat](#repeat)
 - [Fundamentals: removeFromString](#removeFromString)
 - [Fundamentals: includes](#includes)
+- [Fundamentals: indexOf](#indexOf)
 
 ## JS Fundamentals
 
@@ -234,6 +235,37 @@ function includes(arr, number){
 includes([1, 2, 3, 4], 4) // true
 includes([1, 2, 3, 4], 14) // false
 includes([], 14) // false
+
+```
+
+### indexOf
+```JavaScript
+// Write a function called indexOf, which accepts an array and a number. The function should return the index of the number if the value exists in the array and -1 if it does not exist
+
+// Do not use the built in Array.indexOf() function!
+
+function indexOf(arr, number) {
+
+  for (let i = 0; i <= arr.length; i++) {
+    let current = arr[i]
+
+    if (current === number) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+//Examples
+var arr = [5, 10, 15, 20];
+indexOf(arr, 20); // 3
+
+var arr2 = [1, 2, 3, 4, 5];
+indexOf(arr2, 2); // 1
+
+var arr3 = [1, 2];
+indexOf(arr3, 10); // -1
 
 ```
 
