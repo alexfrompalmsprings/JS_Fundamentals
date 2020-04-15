@@ -683,3 +683,34 @@ entries(obj2);
 
 var obj3 = {};
 entries(obj3); // []
+
+
+//025 - Fundamentals: every
+
+// Write a function called every which accepts an array and a callback function. The function should return true if all values in the array passed to the callback return true, otherwise return false.
+
+// Do not use the built in every function, the tests will fail!
+
+function every(arr, cb){
+
+  for(let i = 0; i < arr.length; i++){
+    let current = arr[i];
+
+    if(!cb(current)){
+      return false
+    }
+  }
+
+  return true;
+
+}
+
+// Examples:
+
+every([1, 2, 3, 4, 5], function(val) {
+ return val > 0;
+}); // true
+
+every([1, 2, 3, 4, 5], function(val) {
+ return val < 2;
+}); // false
