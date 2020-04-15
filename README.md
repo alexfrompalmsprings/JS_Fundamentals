@@ -9,10 +9,15 @@ This repo covers the following:
 
 ### AppendToString
 ```JavaScript
+
+// Write a function called appendToString, which accepts two strings.
+// The function should return a new string which consists of the second string appended to the first string.
+
 function appendToString(stringone,stringtwo) {
   return stringone + stringtwo;
 }
 
+// Examples:
 appendToString("Hello", " World!");
 appendToString("Foo", "bar"); // "Foobar"
 appendToString("bar", "Foo"); // "barFoo"
