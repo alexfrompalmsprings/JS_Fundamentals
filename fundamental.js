@@ -125,3 +125,29 @@ function stringLastIndexOf(str, char) {
 
 stringLastIndexOf('awesome', 'e'); // 6
 stringLastIndexOf('awesome', 'z'); // -1
+
+
+// 007 - Fundamentals: repeat
+
+// Write a function called repeat, which accepts a string and a number and returns a new string with the string repeated that number of times.
+
+// Do not use the built in repeat method - the tests will fail if you do!
+
+function repeat(str, times){
+
+  let result = ''
+
+  while(times > 0){
+    result+= str;
+    times--
+  }
+
+
+  return result;
+}
+
+// Examples:
+
+repeat('Matt', 3) // 'MattMattMatt'
+repeat('Elie', 2) // 'ElieElie'
+repeat('Michael', 0) // ''
