@@ -510,3 +510,44 @@ slice([1, 2, 3, 4, 5], 0, 2); // [1, 2]
 slice([1, 2, 3, 4, 5], 2, 4); // [3, 4]
 slice([1, 2, 3, 4, 5], 2); // [3, 4, 5]
 slice([1, 2, 3, 4, 5], 2, 10); // [3, 4, 5]
+
+
+// 020 - Fundamentals: concat
+
+// Write a function called concat, which accepts an array, and one, two, or three additional arguments (all of which are arrays).
+
+// The function returns a new array with all of the remaining parameters joined with the array.
+
+// Hint - if you do not want to hard code the number of arguments, you can use the arguments keyword (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments) or the spread operator (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)  to handle a variable of parameters.
+// Do not use the built in Array.concat() function!
+
+
+//pseudocode included because... so far the hardest question 🤪
+
+function concat(arr,...args){
+
+  //use the spread operator to get the extra arrays
+  var extraArrays=[...args];
+
+  // outer loop over the extra arrays
+  for (var i = 0; i < extraArrays.length; ++i) {
+
+    //easy to read variable
+    let currentArr= extraArrays[i];
+
+    //looping over one array at a time
+    for (var j = 0; j < currentArr.length; ++j)
+
+    // push the to our og array (1st argument)
+    arr.push(currentArr[j]);
+  }
+
+  // complete array-concat
+  return arr;
+}
+
+// Examples:
+concat([1, 2, 3], [4, 5, 6]); // [1, 2, 3, 4, 5, 6]
+concat([1, 2, 3], [4], [5, 6]); // [1, 2, 3, 4, 5, 6]
+concat([1, 2, 3], [4], [5], [6]); // [1, 2, 3, 4, 5, 6]
+concat([1], [[2], [3]], [4]); // [1, [2], [3], 4]]
