@@ -612,3 +612,41 @@ values(obj2); // ["Matt", "Lane", true]
 
 var obj3 = {};
 values(obj3); // []
+
+
+// 023 - Fundamentals: swapKeyAndValue
+
+// Write a function called swapKeyAndValue, which accepts an object and a key.
+
+// The function should return a new object with the given key and its value flipped, and all the other key/value pairs unchanged.
+
+
+function swapKeyAndValue(obj,keyToSwap){
+
+  var result = {};
+
+  for(let key in obj){
+
+    if (keyToSwap in obj){
+
+      result[obj[keyToSwap]]=keyToSwap;
+    }
+
+    result[key]=obj[key];
+
+  }
+    delete result[keyToSwap];
+
+
+  return result;
+  }
+
+
+
+  var instructor = { name: 'Elie', job: 'Instructor' };
+
+  swapKeyAndValue(instructor, 'name');
+  // {Elie: 'name', job: "Instructor"}
+
+  swapKeyAndValue(instructor, 'job');
+  // {name: "Elie", Instructor: 'job'}
