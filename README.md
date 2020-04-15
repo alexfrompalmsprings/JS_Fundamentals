@@ -14,6 +14,8 @@ This repo covers the following:
 - [Fundamentals: includes](#includes)
 - [Fundamentals: indexOf](#indexOf)
 - [Fundamentals: push](#push)
+- [Fundamentals: pop](#pop)
+- [Fundamentals: unshift](#unshift)
 
 ## JS Fundamentals
 
@@ -322,6 +324,67 @@ push(arr, 10); // 4
 var secondArr = [5, 2, 1, 6];
 push(secondArr, 20); // 5
 //arr; // [5, 2, 1, 6, 20]
+
+```
+
+
+### pop
+```JavaScript
+// Write a function called pop which accepts an array.
+
+// The function should remove the last value in the array and return the value removed or undefined if the array is empty.Do not use the built in Array.pop() function!
+
+function pop(arr) {
+
+  if (arr.length === 0) {
+    return undefined;
+  } else {
+    let poppedVal = arr[arr.length - 1];
+    arr.length = arr.length - 1;
+    return poppedVal;
+  }
+}
+
+
+// Examples:
+
+var arr = [1, 2, 3, 4];
+pop(arr); // 4
+arr; // [1, 2, 3]
+
+var emptyArr = [];
+pop(emptyArr); // undefined
+emptyArr.length; // 0
+
+```
+
+### unshift
+```JavaScript
+
+// Write a function called unshift which accepts an array and a value and adds the value to the beginning of the array.This function should return the new length of the array.
+
+// Do not use the built in Array.unshift() function!
+
+function unshift(arr,value){
+
+  for (let i = arr.length-1; i >= 0; --i) {
+    let current = arr[i]
+        arr[i + 1] = current;
+    }
+
+    console.log(arr)
+    arr[0] = value;
+    console.log(arr)
+
+return arr.length;
+}
+
+// Examples:
+
+var arr = [1, 2, 3];
+unshift(arr, 0); // 4
+//arr; // [0, 1, 2, 3]
+
 
 ```
 

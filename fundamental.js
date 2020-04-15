@@ -241,13 +241,13 @@ indexOf(arr3, 10); // -1
 
 // Do not use the built in Array.lastIndexOf() function!
 
-function lastIndexOf(arr, number){
+function lastIndexOf(arr, number) {
 
-  for(let i = arr.length -1; i > 0; i--){
+  for (let i = arr.length - 1; i > 0; i--) {
 
     let current = arr[i];
 
-    if(current === number){
+    if (current === number) {
       return i;
     }
   }
@@ -269,7 +269,7 @@ lastIndexOf([1, 2, 3, 4], 22); // -1
 
 // Do not use the built in Array.push() function!
 
-function push(arr, item){
+function push(arr, item) {
 
   let len = arr.length
 
@@ -290,3 +290,34 @@ var secondArr = [5, 2, 1, 6];
 push(secondArr, 20); // 5
 
 //arr; // [5, 2, 1, 6, 20]
+
+
+//013 - Fundamentals: pop
+
+// Write a function called pop which accepts an array.
+
+// The function should remove the last value in the array and return the value removed or undefined if the array is empty.
+
+// Do not use the built in Array.pop() function!
+
+function pop(arr) {
+
+  if (arr.length === 0) {
+    return undefined;
+  } else {
+    let poppedVal = arr[arr.length - 1];
+    arr.length = arr.length - 1;
+    return poppedVal;
+  }
+}
+
+
+// Examples:
+
+var arr = [1, 2, 3, 4];
+pop(arr); // 4
+arr; // [1, 2, 3]
+
+var emptyArr = [];
+pop(emptyArr); // undefined
+emptyArr.length; // 0
