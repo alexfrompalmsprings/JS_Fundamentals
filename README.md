@@ -6,6 +6,7 @@ This repo covers the following:
 - [Fundamentals: appendToString](#appendToString)
 - [Fundamentals: prependToString](#prependToString)
 - [Fundamentals: charAt](#charAt)
+- [Fundamentals: stringIncludes](#stringIncludes)
 
 ## JS Fundamentals
 
@@ -61,5 +62,34 @@ function charAt (string,index) {
 // Examples:
   charAt('awesome', 2);
   charAt('awesome', 12);
+
+```
+
+### stringIncludes
+```JavaScript
+
+// Write a function called stringIncludes, which accepts two strings: the first string is a word and the second string is a single character.
+
+// The function should return true if the first string includes the character, otherwise it should return false.
+
+// Do not use the built in String.includes() function!
+
+function stringIncludes(word, character) {
+
+  for (i = 0; i <= word.length; i++) {
+    let current = word[i];
+    if (current === character) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+
+// Examples:
+
+stringIncludes('awesome', 'e'); // true
+stringIncludes('awesome', 'z'); // false
 
 ```
