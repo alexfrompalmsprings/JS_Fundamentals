@@ -270,3 +270,31 @@ indexOf(arr3, 10); // -1
 ```
 
 
+### lastIndexOf
+```JavaScript
+// Write a function called lastIndexOf, which accepts an array and a number.The function should return the last index at which the value exists, or -1 if the value is not found.
+
+// Do not use the built in Array.lastIndexOf() function!
+
+function lastIndexOf(arr, number){
+
+  for(let i = arr.length -1; i > 0; i--){
+
+    let current = arr[i];
+
+    if(current === number){
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+// Examples:
+lastIndexOf([1, 2, 3, 4], 2); // 1
+lastIndexOf([1, 2, 3, 4, 2], 2); // 4
+lastIndexOf([1, 2, 3, 4], 22); // -1
+
+```
+
+
