@@ -446,3 +446,34 @@ function max(arr){
 max([5, 1, 4, 7, 1, 2]); // 7
 max([3, 4, 12, 1, 8]); // 12
 max([-1, 6, 3, 2.2, -10, -4]); // 6
+
+
+// 018 - Fundamentals: min
+
+// Write a function called min, which accepts an array of numbers and returns the lowest value.
+
+// Do note use the built-in Math.min() function!
+
+
+function min(arr){
+
+  if(arr.length === 0){
+    return undefined;
+  }
+
+  let min = arr[0]
+
+  for(let i = 1; i < arr.length; i++){
+    let current = arr[i];
+
+    if(min > current){
+      min = current;
+    }
+  }
+
+  return min;
+}
+
+// Examples:
+min([5, 1, 4, 7, 1, 2]); // 1
+min([-1, 6, 3, 2.2, -10, -4]); // -10
