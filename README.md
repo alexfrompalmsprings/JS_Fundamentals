@@ -11,6 +11,7 @@ This repo covers the following:
 - [Fundamentals: stringLastIndexOf](#stringLastIndexOf)
 - [Fundamentals: repeat](#repeat)
 - [Fundamentals: removeFromString](#removeFromString)
+- [Fundamentals: includes](#includes)
 
 ## JS Fundamentals
 

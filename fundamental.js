@@ -175,3 +175,32 @@ removeFromString('Elie', 0, 1) // 'lie'
 removeFromString('Rithm School', 0, 6) // 'School'
 removeFromString('Rithm School', 2, 4) // 'RiSchool'
 removeFromString('Rithm School', 6, 400) // 'Rithm '
+
+
+// 009 - Fundamentals: includes
+
+// Write a function called includes, which accepts an array and a number. The function should return true if the value exists in the array and false if it does not.
+
+// Do not use the built in Array.includes() function!
+
+function includes(arr, number){
+
+  for(let i = 0; i < arr.length; i++){
+    let current = arr[i];
+
+    if(current === number){
+      return true;
+    }
+  }
+
+
+  return false
+}
+
+
+
+// Examples:
+
+includes([1, 2, 3, 4], 4) // true
+includes([1, 2, 3, 4], 14) // false
+includes([], 14) // false
