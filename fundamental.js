@@ -82,12 +82,12 @@ stringIncludes('awesome', 'z'); // false
 
 // Do not use the built in String.indexOf() function!
 
-function stringIndexOf(str, char){
+function stringIndexOf(str, char) {
 
-  for(let i = 0; i < str.length; i++){
+  for (let i = 0; i < str.length; i++) {
     let current = str[i];
 
-    if(current === char){
+    if (current === char) {
       return i;
     }
   }
@@ -99,3 +99,29 @@ function stringIndexOf(str, char){
 //  Examples:
 // stringIndexOf('awesome', 'e') // 2
 // stringIndexOf('awesome', 'z') // -1
+
+
+// 006 - Fundamentals: stringLastIndexOf
+// Write a function called stringLastIndexOf, which accepts two strings: the first is a word and the second is a single character.
+
+// The function should return the last index at which the character exists or -1 if the character is not found.
+
+// Do not use the built in String.lastIndexOf() function!
+
+function stringLastIndexOf(str, char) {
+
+  for (let i = str.length - 1; i > 0; i--) {
+    let current = str[i];
+
+    if (current === char) {
+      return i;
+    }
+  }
+
+  return -1
+}
+
+// Examples:
+
+stringLastIndexOf('awesome', 'e'); // 6
+stringLastIndexOf('awesome', 'z'); // -1
