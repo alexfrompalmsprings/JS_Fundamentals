@@ -13,6 +13,7 @@ This repo covers the following:
 - [Fundamentals: removeFromString](#removeFromString)
 - [Fundamentals: includes](#includes)
 - [Fundamentals: indexOf](#indexOf)
+- [Fundamentals: push](#push)
 
 ## JS Fundamentals
 
@@ -294,6 +295,33 @@ function lastIndexOf(arr, number){
 lastIndexOf([1, 2, 3, 4], 2); // 1
 lastIndexOf([1, 2, 3, 4, 2], 2); // 4
 lastIndexOf([1, 2, 3, 4], 22); // -1
+
+```
+
+### push
+```JavaScript
+// Write a function called push which accepts two parameters, an array and any value. The function should add the value to the end of the array and then return the new length of the array.
+
+// Do not use the built in Array.push() function!
+
+function push(arr, item){
+
+  let len = arr.length
+
+  arr[len] = item;
+
+  return len + 1;
+}
+
+
+// Examples:
+var arr = [1, 2, 3];
+push(arr, 10); // 4
+//arr; // [1, 2, 3, 10]
+
+var secondArr = [5, 2, 1, 6];
+push(secondArr, 20); // 5
+//arr; // [5, 2, 1, 6, 20]
 
 ```
 

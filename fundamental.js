@@ -204,7 +204,7 @@ includes([], 14) // false
 
 
 
-// 009 - Fundamentals: indexOf
+// 010 - Fundamentals: indexOf
 
 // Write a function called indexOf, which accepts an array and a number. The function should return the index of the number if the value exists in the array and -1 if it does not exist
 
@@ -224,8 +224,6 @@ function indexOf(arr, number) {
   return -1;
 }
 
-
-
 var arr = [5, 10, 15, 20];
 indexOf(arr, 20); // 3
 
@@ -234,3 +232,61 @@ indexOf(arr2, 2); // 1
 
 var arr3 = [1, 2];
 indexOf(arr3, 10); // -1
+
+
+
+// 011 - Fundamentals: lastIndexOf
+
+// Write a function called lastIndexOf, which accepts an array and a number.The function should return the last index at which the value exists, or -1 if the value is not found.
+
+// Do not use the built in Array.lastIndexOf() function!
+
+function lastIndexOf(arr, number){
+
+  for(let i = arr.length -1; i > 0; i--){
+
+    let current = arr[i];
+
+    if(current === number){
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+// Examples:
+lastIndexOf([1, 2, 3, 4], 2); // 1
+lastIndexOf([1, 2, 3, 4, 2], 2); // 4
+lastIndexOf([1, 2, 3, 4], 22); // -1
+
+
+
+
+// 012 - Fundamentals: push
+
+// Write a function called push which accepts two parameters, an array and any value. The function should add the value to the end of the array and then return the new length of the array.
+
+// Do not use the built in Array.push() function!
+
+function push(arr, item){
+
+  let len = arr.length
+
+  arr[len] = item;
+
+  return len + 1;
+}
+
+
+// Examples:
+
+var arr = [1, 2, 3];
+push(arr, 10); // 4
+
+//arr; // [1, 2, 3, 10]
+
+var secondArr = [5, 2, 1, 6];
+push(secondArr, 20); // 5
+
+//arr; // [5, 2, 1, 6, 20]
