@@ -7,6 +7,7 @@ This repo covers the following:
 - [Fundamentals: prependToString](#prependToString)
 - [Fundamentals: charAt](#charAt)
 - [Fundamentals: stringIncludes](#stringIncludes)
+- [Fundamentals: stringIndexOf](#stringIndexOf)
 
 ## JS Fundamentals
 
@@ -93,3 +94,35 @@ stringIncludes('awesome', 'e'); // true
 stringIncludes('awesome', 'z'); // false
 
 ```
+
+### stringIndexOf
+```JavaScript
+
+// 005 - Fundamentals: stringIndexOf
+// Write a function called stringIndexOf, which accepts two strings: the first is a word and the second is a single character.
+
+// The function should return the first index in the word at which the character exists or -1 if the character is not found.
+
+// Do not use the built in String.indexOf() function!
+
+function stringIndexOf(str, char){
+
+  for(let i = 0; i < str.length; i++){
+    let current = str[i];
+
+    if(current === char){
+      return i;
+    }
+  }
+
+  return -1
+}
+
+
+//  Examples:
+// stringIndexOf('awesome', 'e') // 2
+// stringIndexOf('awesome', 'z') // -1
+
+```
+
+

@@ -3,7 +3,7 @@
 // Write a function called appendToString, which accepts two strings.
 // The function should return a new string which consists of the second string appended to the first string.
 
-function appendToString(stringone,stringtwo) {
+function appendToString(stringone, stringtwo) {
   return stringone + stringtwo;
 }
 
@@ -22,7 +22,7 @@ appendToString("other test", ""); // "other test"
 // The function should return a new string with the second string prepended to the first string.
 
 
-function  prependToString (stringOne,stringTwo){
+function prependToString(stringOne, stringTwo) {
   return stringTwo + stringOne;
 }
 
@@ -36,16 +36,16 @@ prependToString('nothing', '') // 'nothing'
 
 
 
-function charAt (string,index) {
-  if (index > string.length){
+function charAt(string, index) {
+  if (index > string.length) {
     return '';
   } else {
     return string[index];
   }
 }
 
-  charAt('awesome', 2);
-  charAt('awesome', 12);
+charAt('awesome', 2);
+charAt('awesome', 12);
 
 
 //004 - Fundamentals: stringIncludes
@@ -57,18 +57,15 @@ function charAt (string,index) {
 // Do not use the built in String.includes() function!
 
 
-function stringIncludes (word,character){
+function stringIncludes(word, character) {
 
-  for(i = 0;i <= word.length; i++) {
-
-    if(word[i] === character){
-
+  for (let i = 0; i <= word.length; i++) {
+    let current = word[i];
+    if (current === character) {
       return true;
     }
-
-    // else{return 'false';}
-
   }
+
   return false;
 }
 
@@ -77,3 +74,28 @@ function stringIncludes (word,character){
 
 stringIncludes('awesome', 'e'); // true
 stringIncludes('awesome', 'z'); // false
+
+// 005 - Fundamentals: stringIndexOf
+// Write a function called stringIndexOf, which accepts two strings: the first is a word and the second is a single character.
+
+// The function should return the first index in the word at which the character exists or -1 if the character is not found.
+
+// Do not use the built in String.indexOf() function!
+
+function stringIndexOf(str, char){
+
+  for(let i = 0; i < str.length; i++){
+    let current = str[i];
+
+    if(current === char){
+      return i;
+    }
+  }
+
+  return -1
+}
+
+
+//  Examples:
+// stringIndexOf('awesome', 'e') // 2
+// stringIndexOf('awesome', 'z') // -1
