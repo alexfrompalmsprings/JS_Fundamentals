@@ -4,6 +4,8 @@ A repo to help some of the people who I have been tutoring and helping over the 
 This repo covers the following:
 
 - [Fundamentals: appendToString](#appendToString)
+- [Fundamentals: prependToString](#prependToString)
+- [Fundamentals: charAt](#charAt)
 
 ## JS Fundamentals
 
@@ -24,7 +26,7 @@ appendToString("bar", "Foo"); // "barFoo"
 appendToString("", "test"); // "test"
 appendToString("other test", ""); // "other test"
 ```
-### prependToString
+### PrependToString
 ```JavaScript
 
 
@@ -42,5 +44,22 @@ prependToString('awesome', 'very'); // 'veryawesome'
 prependToString('awesome', 'very'); // 'veryawesome'
 prependToString('world', 'hello '); // 'hello world'
 prependToString('nothing', '') // 'nothing'
+
+```
+
+### charAt
+```JavaScript
+
+function charAt (string,index) {
+  if (index > string.length){
+    return '';
+  } else {
+    return string[index];
+  }
+}
+
+// Examples:
+  charAt('awesome', 2);
+  charAt('awesome', 12);
 
 ```

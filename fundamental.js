@@ -33,3 +33,16 @@ prependToString('awesome', 'very'); // 'veryawesome'
 prependToString('awesome', 'very'); // 'veryawesome'
 prependToString('world', 'hello '); // 'hello world'
 prependToString('nothing', '') // 'nothing'
+
+
+
+function charAt (string,index) {
+  if (index > string.length){
+    return '';
+  } else {
+    return string[index];
+  }
+}
+
+  charAt('awesome', 2);
+  charAt('awesome', 12);
