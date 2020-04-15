@@ -24,6 +24,8 @@ This repo covers the following:
 - [Fundamentals: concat](#concat)
 - [Fundamentals: keys](#keys)
 - [Fundamentals: values](#values)
+- [Fundamentals: swapKeyAndValue](#swapKeyAndValue)
+
 
 ## JS Fundamentals
 
@@ -670,7 +672,7 @@ values(obj3); // []
 
 ```
 
-### KeyToSwap
+### swapKeyAndValue
 ```JavaScript
 // Write a function called swapKeyAndValue, which accepts an object and a key.
 
