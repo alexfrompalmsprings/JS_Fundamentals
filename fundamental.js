@@ -582,3 +582,33 @@ keys(obj2); // ["first", "last"]
 
 var obj3 = {};
 keys(obj3); // []
+
+
+// 022 - Fundamentals: values
+
+// Write a function called values, which accepts an object and returns an array of all of the values in the object.
+
+// Do not use the built in Object.values() function!
+
+function values(obj){
+
+  let result =[];
+
+  for(let item in obj){
+    let current = obj[item]
+    result.push(obj[item])
+  }
+
+
+  return result;
+}
+
+//Examples:
+var obj = { a: 1, b: 2, c: 3 };
+values(obj); // [1,2,3]
+
+var obj2 = { first: 'Matt', last: 'Lane', isDogOwner: true };
+values(obj2); // ["Matt", "Lane", true]
+
+var obj3 = {};
+values(obj3); // []
