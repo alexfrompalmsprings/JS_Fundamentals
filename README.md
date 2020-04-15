@@ -22,6 +22,7 @@ This repo covers the following:
 - [Fundamentals: min](#min)
 - [Fundamentals: slice](#slice)
 - [Fundamentals: concat](#concat)
+- [Fundamentals: keys](#keys)
 
 ## JS Fundamentals
 
@@ -600,4 +601,38 @@ concat([1, 2, 3], [4, 5, 6]); // [1, 2, 3, 4, 5, 6]
 concat([1, 2, 3], [4], [5, 6]); // [1, 2, 3, 4, 5, 6]
 concat([1, 2, 3], [4], [5], [6]); // [1, 2, 3, 4, 5, 6]
 concat([1], [[2], [3]], [4]); // [1, [2], [3], 4]]
+```
+
+
+### Keys
+```JavaScript
+// 021 - Fundamentals: keys
+
+// Write a function called keys, which accepts an object and returns an array of all of the keys in the object.
+
+// Do not use the built in Object.keys() function!
+
+
+function keys(obj){
+
+  let result =[];
+
+  for(let item in obj){
+    result.push(item)
+  }
+
+
+  return result;
+}
+
+
+// Examples:
+var obj = { a: 1, b: 2, c: 3 };
+keys(obj); // ["a", "b", "c"]
+
+var obj2 = { first: 'Matt', last: 'Lane' };
+keys(obj2); // ["first", "last"]
+
+var obj3 = {};
+keys(obj3); // []
 ```
