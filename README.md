@@ -25,6 +25,7 @@ This repo covers the following:
 - [Fundamentals: keys](#keys)
 - [Fundamentals: values](#values)
 - [Fundamentals: swapKeyAndValue](#swapKeyAndValue)
+- [Fundamentals: entries](#entries)
 
 
 ## JS Fundamentals
@@ -708,5 +709,38 @@ function swapKeyAndValue(obj,keyToSwap){
 
   swapKeyAndValue(instructor, 'job');
   // {name: "Elie", Instructor: 'job'}
+
+```
+
+### Entries
+```JavaScript
+//   Write a function called entries, which accepts an object and returns an array of arrays of key-value pairs.
+
+// In other words, each sub-array is an "entry" in the object with two elements: the first element is the key, and the second element is the value.
+
+// Do not use the built in Object.entries() function!
+
+// Examples:
+function entries(obj){
+
+  var result=[];
+
+  for(var key in obj){
+    result.push([key,obj[key]]);
+  }
+  return result;
+}
+
+var obj = { a: 1, b: 2, c: 3 };
+entries(obj);
+// [["a",1], ["b",2], ["c",3]]
+
+var obj2 = { first: 'Matt', last: 'Lane', isDogOwner: true };
+entries(obj2);
+// [["first","Matt"], ["last","Lane"], ["isDogOwner",true]]
+
+var obj3 = {};
+entries(obj3); // []
+
 
 ```
