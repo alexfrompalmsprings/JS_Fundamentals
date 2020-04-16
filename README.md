@@ -29,6 +29,7 @@ This repo covers the following:
 - [Fundamentals: every](#every)
 - [Fundamentals: some](#some)
 - [Fundamentals: countIf](#countIf)
+- [Fundamentals: squareEvenNumbers](#squareEvenNumbers)
 
 
 ## JS Fundamentals
@@ -809,6 +810,43 @@ every([1, 2, 3, 4, 5], function(val) {
 ```
 
 ### CountIf
+```JavaScript
+// Write a function called countIf which accepts an array and a callback function. The callback function will return a boolean comparison to its val parameter.
+
+// The function should return a count of the number of times the callback returns true when passed each value in the array.
+
+// Examples:
+
+function countIf(arr, cb){
+
+  let counter = 0;
+
+  for(let i = 0; i < arr.length; i++){
+    let current = arr[i];
+
+    if(cb(current)){
+      counter++
+    }
+
+  }
+
+  return counter;
+}
+
+countIf([1, 2, 3, 4, 5], function(val) {
+ return val > 4;
+}); // 1
+
+countIf([2, 4, 6, 7], function(val) {
+ return val % 2 === 0;
+}); // 3
+
+countIf(['Tim', 'Matt', 'Elie'], function(val) {
+ return val.length > 3;
+}); // 2
+```
+
+### squareEvenNumbers
 ```JavaScript
 // Write a function called countIf which accepts an array and a callback function. The callback function will return a boolean comparison to its val parameter.
 

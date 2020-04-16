@@ -780,3 +780,55 @@ countIf([2, 4, 6, 7], function(val) {
 countIf(['Tim', 'Matt', 'Elie'], function(val) {
  return val.length > 3;
 }); // 2
+
+
+
+// 029 - Fundamentals: countValues
+
+// Write a function called countValues which accepts an array and a number and returns the number of times that value appears in the array.
+
+function countValues(arr, value){
+  let counter = 0;
+
+  arr.forEach((item) => {
+    if(item === value){
+      counter++
+    }
+    return counter;
+  })
+
+  return counter;
+}
+
+// Examples:
+countValues([4,1,4,2,3,4,4], 4) // 4
+countValues([4,1,4,2,3,4,4], 100) // 0
+countValues([], 1) // 0
+
+
+
+// 030 - Fundamentals: squareEvenNumbers
+
+// Write a function called squareEvenNumbers which accepts an array and returns the sum of all of the even numbers in the array squared.
+
+// Examples:
+
+function squareEvenNumbers(arr){
+  let sum = 0;
+
+  arr.forEach((number) => {
+
+    if(number% 2 === 0){
+      sum += (number * number)
+    }
+
+    return sum;
+  })
+
+  return sum;
+}
+
+
+squareEvenNumbers([1, 2, 3, 4, 5]); // 20
+squareEvenNumbers([1, 3, 5, 7]); // 0
+squareEvenNumbers([5, 6, 7]); // 36
