@@ -34,6 +34,7 @@ This repo covers the following:
 This repo also has some coding challenges. This is the list of the 'Problem Solving Challenges' :
 
 - [Problem Solving Challenge: multiples](#multiples)
+- [Problem Solving Challenge: pluck](#pluck)
 
 
 ## JS Fundamentals
@@ -889,7 +890,7 @@ countIf(['Tim', 'Matt', 'Elie'], function(val) {
 
 ## Problem Solving Challenges
 
-### multiples
+### Multiples
 ```JavaScript
 // Implement a function called multiples that accepts two numbers: x and n. The function should return the first n multiples of the number x. Assume that x is a positive integer.
 
@@ -913,4 +914,43 @@ multiples(2, 5) // [2, 4, 6, 8, 10]
 
 // Credit - https://www.codewars.com/kata/return-the-first-m-multiples-of-n/train/javascript
 
+```
+
+### Pluck
+```JavaScript
+// Write a function called pluck, which takes an array of objects and the name of a key. The function should return an array containing the value associated with that key for each object, or undefined if that key is not present in the object.
+
+function pluck(arr, key){
+
+  let result = [];
+
+  for(let i = 0; i < arr.length; i++){
+    let current = arr[i];
+
+    if(key in current){
+      result.push(current[key])
+    } else{
+      result.push(undefined)
+    }
+
+
+  }
+
+  return result;
+}
+
+
+// Examples:
+
+pluck([
+  { name: "Tim" }, { name: "Matt" }, { name: "Elie" }],
+ 'name'
+)
+// ["Tim", "Matt", "Elie"]
+
+pluck(
+  [{ name: "Tim", isBoatOwner: true }, { name: "Matt", isBoatOwner: false }, { name: "Elie" }],
+ 'isBoatOwner'
+)
+// [true, false, undefined]
 ```
