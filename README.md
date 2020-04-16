@@ -40,6 +40,7 @@ This repo also has some coding challenges. This is the list of the 'Problem Solv
 - [Problem Solving Challenge: stringFromObject](#stringFromObject)
 - [Problem Solving Challenge: toQueryString](#toQueryString)
 - [Problem Solving Challenge: countNumbers](#countNumbers)
+- [Problem Solving Challenge: generatePairs](#generatePairs)
 
 
 ## JS Fundamentals
