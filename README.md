@@ -36,6 +36,8 @@ This repo also has some coding challenges. This is the list of the 'Problem Solv
 - [Problem Solving Challenge: multiples](#multiples)
 - [Problem Solving Challenge: pluck](#pluck)
 - [Problem Solving Challenge: twoHighest](#twoHighest)
+- [Problem Solving Challenge: minMaxKeyInObject](#minMaxKeyInObject)
+- [Problem Solving Challenge: stringFromObject](#stringFromObject)
 
 
 ## JS Fundamentals
