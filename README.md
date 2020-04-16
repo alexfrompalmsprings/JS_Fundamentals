@@ -39,6 +39,7 @@ This repo also has some coding challenges. This is the list of the 'Problem Solv
 - [Problem Solving Challenge: minMaxKeyInObject](#minMaxKeyInObject)
 - [Problem Solving Challenge: stringFromObject](#stringFromObject)
 - [Problem Solving Challenge: toQueryString](#toQueryString)
+- [Problem Solving Challenge: countNumbers](#countNumbers)
 
 
 ## JS Fundamentals
@@ -1096,4 +1097,31 @@ toQueryString({"bar": [ 2, 3], "foo": 1 }) // "bar=2&bar=3&foo=1"
 toQueryString({name: "Elie", "nums": [1,2,3,4]}) // "name=Elie&nums=1&nums=2&nums=3&nums=4"
 
 // Credit - https://www.codewars.com/kata/do-you-know-how-to-make-query-string
+```
+
+
+### countNumbers
+```JavaScript
+// Write a function called countNumbers, which accepts an array of strings. The function should return a count of the number of strings in the array that can be successfully converted into a number. For example, the string "1" can be successfully converted to the number 1, but the string "hello" cannot be converted into a number.
+
+function countNumbers(arr){
+  let counter = 0;
+
+  arr.forEach((item) => {
+
+    if(item === '0' || Number(item)){
+      counter++
+    }
+    return counter
+  })
+
+  return counter;
+}
+
+// Examples:
+countNumbers(['a','b','3','awesome','4']); // 2
+countNumbers(['32', '55', 'awesome', 'test', '100']); // 3
+countNumbers([]); // 0
+countNumbers(['0','1','3','NaN']); // 3
+countNumbers(['7', '12', 'a', '', '6', '8', ' ']); // 4
 ```
