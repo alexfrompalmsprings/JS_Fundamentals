@@ -31,6 +31,10 @@ This repo covers the following:
 - [Fundamentals: countIf](#countIf)
 - [Fundamentals: squareEvenNumbers](#squareEvenNumbers)
 
+This repo also has some coding challenges. This is the list of the 'Problem Solving Challenges' :
+
+- [Problem Solving Challenge: multiples](#multiples)
+
 
 ## JS Fundamentals
 

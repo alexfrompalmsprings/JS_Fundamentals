@@ -337,9 +337,7 @@ function unshift(arr, value) {
     arr[i + 1] = current;
   }
 
-  console.log(arr)
   arr[0] = value;
-  console.log(arr)
 
   return arr.length;
 }
@@ -492,7 +490,7 @@ min([-1, 6, 3, 2.2, -10, -4]); // -10
 
 function slice(arr, start, end){
 
-  let newArr = [];
+  let result = [];
 
   for(let i = start; i < end; i++){
     let current = arr[i];
@@ -832,3 +830,173 @@ function squareEvenNumbers(arr){
 squareEvenNumbers([1, 2, 3, 4, 5]); // 20
 squareEvenNumbers([1, 3, 5, 7]); // 0
 squareEvenNumbers([5, 6, 7]); // 36
+
+
+// 031 - Problem Solving 1: multiples
+
+// Implement a function called multiples that accepts two numbers: x and n. The function should return the first n multiples of the number x. Assume that x is a positive integer.
+
+function multiples(number, times){
+
+  let result = [];
+  let sum = number;
+
+  while(times > 0){
+    result.push(sum)
+    sum+=number;
+    times--
+  }
+
+  return result
+}
+
+
+
+
+// Examples:
+multiples(3, 4) // [3, 6, 9, 12]
+multiples(2, 5) // [2, 4, 6, 8, 10]
+
+// Credit - https://www.codewars.com/kata/return-the-first-m-multiples-of-n/train/javascript
+
+
+// 032 - Problem Solving 1: pluck
+
+// Write a function called pluck, which takes an array of objects and the name of a key. The function should return an array containing the value associated with that key for each object, or undefined if that key is not present in the object.
+
+function pluck(arr, key){
+
+  let result = [];
+
+  for(let i = 0; i < arr.length; i++){
+    let current = arr[i];
+
+    if(key in current){
+      result.push(current[key])
+    } else{
+      result.push(undefined)
+    }
+
+
+  }
+
+  return result;
+}
+
+
+// Examples:
+
+pluck([
+  { name: "Tim" }, { name: "Matt" }, { name: "Elie" }],
+ 'name'
+)
+// ["Tim", "Matt", "Elie"]
+
+pluck(
+  [{ name: "Tim", isBoatOwner: true }, { name: "Matt", isBoatOwner: false }, { name: "Elie" }],
+ 'isBoatOwner'
+)
+// [true, false, undefined]
+
+
+
+// 033 - Problem Solving 1: twoHighest
+
+// Write a function called twoHighest that takes an array of numbers as its argument and returns the two highest numbers within the array. The returned value should be an array in the following format: [secondHighest, highest].The order of the numbers passed in could be any order.
+
+// Do not use the build in sort() method - the tests will fail!
+
+function twoHighest(arr){
+  let highest = arr[0];
+  let secondHighest = arr[1]
+
+  if(secondHighest > highest){
+    let temp = highest;
+    highest = secondHighest;
+    secondHighest = temp;
+  }
+
+
+  for(let i = 2; i < arr.length; i++){
+    let current = arr[i];
+
+    if(current > highest){
+      secondHighest = highest;
+      highest = current;
+    } else if(current > secondHighest){
+      secondHighest = current;
+    }
+
+  }
+
+  // console.log([secondHighest, highest])
+  return [secondHighest, highest]
+}
+
+
+
+// Examples:
+
+twoHighest([1, 2, 10, 8]); // [8, 10]
+twoHighest([6, 1, 9, 10, 4]); // [9,10]
+twoHighest([4, 25, 3, 20, 19, 5]); // [20,25]
+twoHighest([1, 2, 2]) // [2, 2];
+
+// Credit - https://www.codewars.com/kata/two-oldest-ages-1
+
+
+// 034 - Problem Solving 1: minMaxKeyInObject
+
+// Write a function called minMaxKeyInObject that accepts an object with numeric keys.*
+// The function should return an array with the following format: [lowestKey, highestKey]
+// * Remember all object keys are strings, even if they hold numeric values.
+
+// Examples:
+
+function minMaxKeyInObject(obj){
+
+  let keys = Object.keys(obj)
+
+  let first = Number(keys[0])
+  let last = Number(keys[keys.length -1]);
+
+  return [first, last]
+}
+
+minMaxKeyInObject({ 2: 'a', 7: 'b', 1: 'c', 10: 'd', 4: 'e' });
+// [1, 10]
+
+minMaxKeyInObject({ 1: 'Elie', 4: 'Matt', 2: 'Tim' });
+// [1, 4]
+
+
+// 035 - Problem Solving 1: stringFromObject
+
+// Write a function called stringFromObject that generates a string from an object's key/value pairs.
+// The format should be "key = value, key = value".
+// Each key/value pair should be separated by a comma and space except for the last pair.
+
+//Examples:
+
+function stringFromObject(obj){
+
+  var result=[];
+
+  for(let key in obj){
+   result.push(key + ' = ' + obj[key]);
+  }
+  console.log(result)
+  return result.join(', ');
+}
+
+
+stringFromObject({ a: 1, b: '2' });
+// "a = 1, b = 2"
+
+stringFromObject({ name: 'Elie', job: 'Instructor', isCatOwner: false });
+// "name = Elie, job = Instructor, isCatOwner = false"
+
+stringFromObject({});
+// ""
+
+// Credit - https://www.codewars.com/kata/building-strings-from-a-hash
