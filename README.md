@@ -886,3 +886,31 @@ countIf(['Tim', 'Matt', 'Elie'], function(val) {
  return val.length > 3;
 }); // 2
 ```
+
+## Problem Solving Challenges
+
+### multiples
+```JavaScript
+// Implement a function called multiples that accepts two numbers: x and n. The function should return the first n multiples of the number x. Assume that x is a positive integer.
+
+function multiples(number, times){
+
+  let result = [];
+  let sum = number;
+
+  while(times > 0){
+    result.push(sum)
+    sum+=number;
+    times--
+  }
+
+  return result
+}
+
+// Examples:
+multiples(3, 4) // [3, 6, 9, 12]
+multiples(2, 5) // [2, 4, 6, 8, 10]
+
+// Credit - https://www.codewars.com/kata/return-the-first-m-multiples-of-n/train/javascript
+
+```
