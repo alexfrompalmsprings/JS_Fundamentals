@@ -1125,3 +1125,30 @@ countNumbers([]); // 0
 countNumbers(['0','1','3','NaN']); // 3
 countNumbers(['7', '12', 'a', '', '6', '8', ' ']); // 4
 ```
+
+### generatePairs
+```JavaScript
+// Write a function generatePairs that accepts an integer and generates an array containing the pairs of integers [a, b]. The pairs should be sorted by increasing values of a then increasing values of b.
+
+function generatePairs(number) {
+  let result = [];
+
+  for(let i =0 ; i <= number ; i++){
+
+    for(let j = i ; j <= number ; j++){
+
+        result.push([i, j]);
+    }
+  }
+
+  return result;
+}
+
+// Examples:
+generatePairs(3) // [ [0, 0], [0, 1], [0, 2], [0, 3], [1, 1], [1, 2], [1, 3], [2, 2], [2, 3], [3, 3] ]
+generatePairs(2) // [ [0, 0], [0, 1], [0, 2], [1, 1], [1, 2], [2, 2] ]
+generatePairs(1) // [ [0, 0], [0, 1], [1,1]]
+generatePairs(0) // [ [0, 0]]
+
+// Credit -  https://www.codewars.com/kata/pairs-of-integers-from-0-to-n/train/javascript
+```
