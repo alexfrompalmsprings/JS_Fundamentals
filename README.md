@@ -41,6 +41,7 @@ This repo also has some coding challenges. This is the list of the 'Problem Solv
 - [Problem Solving Challenge: toQueryString](#toQueryString)
 - [Problem Solving Challenge: countNumbers](#countNumbers)
 - [Problem Solving Challenge: generatePairs](#generatePairs)
+- [Problem Solving Challenge: findTheDuplicate](#findTheDuplicate)
 
 
 ## JS Fundamentals
@@ -1152,4 +1153,39 @@ generatePairs(1) // [ [0, 0], [0, 1], [1,1]]
 generatePairs(0) // [ [0, 0]]
 
 // Credit -  https://www.codewars.com/kata/pairs-of-integers-from-0-to-n/train/javascript
+```
+
+
+### findTheDuplicate
+```JavaScript
+// Write a function called findTheDuplicate which accepts an array of numbers containing a single duplicate. The function returns the number which is a duplicate or undefined if there are no duplicates.
+// Examples:
+
+function findTheDuplicate(arr){
+
+  let map = {};
+
+  for(let i = 0; i< arr.length; i ++){
+    let current = arr[i];
+
+    if(map[current] === undefined){
+      map[current] = 1;
+    } else{
+      map[current]++;
+    }
+  }
+
+  for(let num in map){
+
+    if(map[num] > 1){
+      return Number(num);
+    }
+  }
+
+  return undefined;
+}
+
+findTheDuplicate([1,2,1,4,3,12]) // 1
+findTheDuplicate([6,1,9,5,3,4,9]) // 9
+findTheDuplicate([2,1,3,4]) // undefined
 ```

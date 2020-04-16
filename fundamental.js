@@ -1089,3 +1089,95 @@ generatePairs(1) // [ [0, 0], [0, 1], [1,1]]
 generatePairs(0) // [ [0, 0]]
 
 // Credit -  https://www.codewars.com/kata/pairs-of-integers-from-0-to-n/train/javascript
+
+
+// 039 - Problem Solving 2: objectCompare
+
+// Write a function called objectCompare which accepts two objects or two arrays. The function should return true if the two objects are identical or if the two arrays contain the same values at the same indices.
+
+// If you are comparing two objects, the of the keys in each object does not matter. If you are comparing two arrays the order does matter.
+
+// Do not use JSON.stringify to solve this quickly - it will not work!
+
+// Examples:
+
+function objectCompare(one, two){
+
+  for(let i = 0; i < one.length; i++){
+    let currentOne = one[i];
+    let currentTwo = two[i]
+
+    if(currentOne !== currentTwo){
+      return false;
+    }
+  }
+}
+var arr1 = [1,2,3,4]
+var arr2 = [1,2,3,4]
+
+objectCompare(arr1, arr2) // true
+
+var arr3 = [1,2,3,4]
+var arr4 = [4,3,2,1]
+
+objectCompare(arr3, arr4) // false
+
+var obj1 = {favNum: 22, favColor: "green"}
+var obj2 = {favColor: "green", favNum: 22}
+
+objectCompare(obj1, obj2) // true
+
+var obj3 = {favNum: 22, favColor: "green"}
+var obj4 = {favNum: 22, favColor: "blue"}
+
+objectCompare(obj3, obj4) // false
+
+var obj5 = {favNumbers: [1,2,3,4]}
+var obj6 = {favNumbers: [1,2,3,4]}
+
+objectCompare(obj5, obj6) // true
+
+var obj7 = {favNumbers: [1,2,3,4,5]}
+var obj8 = {favNumbers: [1,2,3,4]}
+
+objectCompare(obj7, obj8) // false
+
+
+
+// 040 - Problem Solving 2: findTheDuplicate
+
+// Write a function called findTheDuplicate which accepts an array of numbers containing a single duplicate. The function returns the number which is a duplicate or undefined if there are no duplicates.
+// Examples:
+
+function findTheDuplicate(arr){
+
+  let map = {};
+
+  for(let i = 0; i< arr.length; i ++){
+    let current = arr[i];
+
+    if(map[current] === undefined){
+      map[current] = 1;
+    } else{
+      map[current]++;
+    }
+
+  }
+
+
+  for(let num in map){
+
+    // console.log(num)
+
+    if(map[num] > 1){
+      return Number(num);
+    }
+
+  }
+
+  return undefined;
+}
+
+findTheDuplicate([1,2,1,4,3,12]) // 1
+findTheDuplicate([6,1,9,5,3,4,9]) // 9
+findTheDuplicate([2,1,3,4]) // undefined
