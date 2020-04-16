@@ -35,6 +35,7 @@ This repo also has some coding challenges. This is the list of the 'Problem Solv
 
 - [Problem Solving Challenge: multiples](#multiples)
 - [Problem Solving Challenge: pluck](#pluck)
+- [Problem Solving Challenge: twoHighest](#twoHighest)
 
 
 ## JS Fundamentals
@@ -953,4 +954,51 @@ pluck(
  'isBoatOwner'
 )
 // [true, false, undefined]
+```
+
+### Pluck
+```JavaScript
+// 033 - Problem Solving 1: twoHighest
+
+// Write a function called twoHighest that takes an array of numbers as its argument and returns the two highest numbers within the array. The returned value should be an array in the following format: [secondHighest, highest].The order of the numbers passed in could be any order.
+
+// Do not use the build in sort() method - the tests will fail!
+
+function twoHighest(arr){
+  let highest = arr[0];
+  let secondHighest = arr[1]
+
+  if(secondHighest > highest){
+    let temp = highest;
+    highest = secondHighest;
+    secondHighest = temp;
+  }
+
+
+  for(let i = 2; i < arr.length; i++){
+    let current = arr[i];
+
+    if(current > highest){
+      secondHighest = highest;
+      highest = current;
+    } else if(current > secondHighest){
+      secondHighest = current;
+    }
+
+  }
+
+  // console.log([secondHighest, highest])
+  return [secondHighest, highest]
+}
+
+
+
+// Examples:
+
+twoHighest([1, 2, 10, 8]); // [8, 10]
+twoHighest([6, 1, 9, 10, 4]); // [9,10]
+twoHighest([4, 25, 3, 20, 19, 5]); // [20,25]
+twoHighest([1, 2, 2]) // [2, 2];
+
+// Credit - https://www.codewars.com/kata/two-oldest-ages-1
 ```
