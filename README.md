@@ -44,6 +44,7 @@ This repo also has some coding challenges. This is the list of the 'Problem Solv
 - [Problem Solving Challenge: findTheDuplicate](#findTheDuplicate)
 - [Problem Solving Challenge: totalCaps](#totalCaps)
 - [Problem Solving Challenge: highestScoringWord](#highestScoringWord)
+- [Problem Solving Challenge: separate](#separate)
 
 
 ## JS Fundamentals
@@ -1301,3 +1302,51 @@ highestScoringWord("this sentence has two highest scoring words"); // "sentence"
 // Credit - https://www.codewars.com/kata/highest-scoring-word
 
 ```
+
+
+
+
+### HighestScoringWord
+```JavaScript
+// Dogs don't get along with cats, and cats don't get along with dogs.
+// What they both have in common is that they don't get along with water (baths).
+// Given an array of 'dogs', 'cats', and 'water', write a function called separate, which returns a new array so that the dogs are separated from the cats by water. Make sure that cats always come first in the array.
+// You can assume that the array will always at least three elements, and that there'll always be at least one dog, one cat, and one water to work with.
+
+let separate = (arr) => {
+
+    let result;
+    let dogs = [];
+    let cats = [];
+    let water = [];
+
+
+    arr.forEach((item) => {
+      if(item === 'dog'){
+        dogs.push(item)
+      }
+
+      if(item === 'water'){
+        water.push(item)
+      }
+
+      if(item === 'cat'){
+        cats.push(item)
+      }
+    })
+
+
+
+    result = cats.concat(water).concat(dogs)
+
+  return result;
+}
+
+
+separate(['dog','cat','water']) // ['cat','water','dog']
+
+separate(['dog','cat','water','cat']) // ['cat', 'cat', 'water', 'dog'])
+
+separate(['cat','cat','water','dog','water','cat','water','dog'])
+  // ['cat','cat','cat','water','water','water','dog','dog']
+  ```
