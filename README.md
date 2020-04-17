@@ -1313,6 +1313,8 @@ highestScoringWord("this sentence has two highest scoring words"); // "sentence"
 // Given an array of 'dogs', 'cats', and 'water', write a function called separate, which returns a new array so that the dogs are separated from the cats by water. Make sure that cats always come first in the array.
 // You can assume that the array will always at least three elements, and that there'll always be at least one dog, one cat, and one water to work with.
 
+
+/* Please note that this solution is not the most optimized way to solve it. Best solution would involved recursion but for demonstration purposes this solution works well*/
 let separate = (arr) => {
 
     let result;
