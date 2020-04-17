@@ -42,6 +42,7 @@ This repo also has some coding challenges. This is the list of the 'Problem Solv
 - [Problem Solving Challenge: countNumbers](#countNumbers)
 - [Problem Solving Challenge: generatePairs](#generatePairs)
 - [Problem Solving Challenge: findTheDuplicate](#findTheDuplicate)
+- [Problem Solving Challenge: totalCaps](#totalCaps)
 
 
 ## JS Fundamentals
@@ -1188,4 +1189,38 @@ function findTheDuplicate(arr){
 findTheDuplicate([1,2,1,4,3,12]) // 1
 findTheDuplicate([6,1,9,5,3,4,9]) // 9
 findTheDuplicate([2,1,3,4]) // undefined
+```
+
+### TotalCaps
+```JavaScript
+/ Write a function called totalCaps, which accepts an array of strings and returns the total number of capitals in each of the strings. Do not convert the array into a string.
+
+
+let totalCaps = (arr) => {
+
+  let counter = 0;
+
+  for(let i = 0; i < arr.length; i++){
+    let word = arr[i];
+
+    for(let j = 0; j < word.length; j++){
+      let letter = word[j];
+
+      if(letter === letter.toUpperCase()){
+        // console.log(`we found a CAP ${letter}`)
+        counter++
+      }
+
+    }
+  }
+
+  // console.log(counter)
+  return counter;
+}
+
+// Examples:
+
+totalCaps(["AwesomE", "ThIngs", "hAppEning", "HerE"]) // 8
+totalCaps(["Elie", "Matt", "Tim"]) // 3
+totalCaps(["hello", "world"]) // 0
 ```
