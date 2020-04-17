@@ -43,6 +43,7 @@ This repo also has some coding challenges. This is the list of the 'Problem Solv
 - [Problem Solving Challenge: generatePairs](#generatePairs)
 - [Problem Solving Challenge: findTheDuplicate](#findTheDuplicate)
 - [Problem Solving Challenge: totalCaps](#totalCaps)
+- [Problem Solving Challenge: highestScoringWord](#highestScoringWord)
 
 
 ## JS Fundamentals
