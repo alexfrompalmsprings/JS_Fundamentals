@@ -1193,7 +1193,7 @@ findTheDuplicate([2,1,3,4]) // undefined
 
 ### TotalCaps
 ```JavaScript
-/ Write a function called totalCaps, which accepts an array of strings and returns the total number of capitals in each of the strings. Do not convert the array into a string.
+// Write a function called totalCaps, which accepts an array of strings and returns the total number of capitals in each of the strings. Do not convert the array into a string.
 
 
 let totalCaps = (arr) => {
@@ -1223,4 +1223,80 @@ let totalCaps = (arr) => {
 totalCaps(["AwesomE", "ThIngs", "hAppEning", "HerE"]) // 8
 totalCaps(["Elie", "Matt", "Tim"]) // 3
 totalCaps(["hello", "world"]) // 0
+```
+
+
+### HighestScoringWord
+```JavaScript
+// Given a string of words, your goal is to find the highest scoring word in the string. a is worth 1 point, b is worth 2 points, c is worth 3 points,
+//and so on, all the way up until z, which is worth 26 points. You can assume that strings will consist only of lowercase letters and spaces.
+// In the event that two words have the same score, return the word that appears first in the string.
+
+let alphabet = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 4,
+  e: 5,
+  f: 6,
+  g: 7,
+  h: 8,
+  i: 9,
+  j: 10,
+  k: 11,
+  l: 12,
+  m: 13,
+  n: 14,
+  o: 15,
+  p: 16,
+  q: 17,
+  r: 18,
+  s: 19,
+  t: 20,
+  u: 21,
+  v: 22,
+  w: 23,
+  x: 24,
+  y: 25,
+  z: 26
+}
+
+
+let highestScoringWord = (string) => {
+
+  let wordsArray = string.split(' ');
+  let score = 0;
+  let highestScoring;
+
+
+  for(let i = 0; i < wordsArray.length; i++){
+    let currentWord = wordsArray[i];
+    let currentScore = 0;
+
+    for(let j = 0; j < currentWord.length; j++){
+      let letter = currentWord[j]
+      currentScore += alphabet[letter]
+
+    }
+
+    if(currentScore >= score){
+      score = currentScore
+      highestScoring = currentWord
+    }
+  }
+
+  return highestScoring;
+}
+
+// Examples:
+highestScoringWord("a b c d e f"); // "f"
+highestScoringWord("world hello"); // "world"
+highestScoringWord("go ahead make my day"); // "my"
+highestScoringWord("there is no place like home"); // "there"
+highestScoringWord("aaaaaa bbb cc f"); // "aaaaaa"
+highestScoringWord("bbb cc f aaaaaa"); // "bbb"
+highestScoringWord("this sentence has two highest scoring words"); // "sentence"
+
+// Credit - https://www.codewars.com/kata/highest-scoring-word
+
 ```

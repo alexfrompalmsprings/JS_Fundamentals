@@ -364,7 +364,7 @@ function shift(arr) {
   }
 
   let shifted = arr.splice(0, 1)
-                  .join();
+    .join();
 
   return shifted;
 
@@ -390,13 +390,13 @@ emptyArr.length; // 0
 
 // Do not use the built in Array.reverse() function!
 
-function reverse(arr){
+function reverse(arr) {
 
   let first = 0;
-  let last = arr.length -1;
+  let last = arr.length - 1;
   let temp;
 
-  while(last > first){
+  while (last > first) {
     temp = arr[first]
     arr[first] = arr[last]
     arr[last] = temp;
@@ -410,7 +410,7 @@ function reverse(arr){
 }
 
 // Examples:
-reverse([7,6, 5, 4, 3, 2, 1]); // [1, 2, 3, 4, 5]
+reverse([7, 6, 5, 4, 3, 2, 1]); // [1, 2, 3, 4, 5]
 reverse([]); // []
 
 
@@ -420,18 +420,18 @@ reverse([]); // []
 
 // Do not use the built-in Math.max() function!
 
-function max(arr){
+function max(arr) {
 
-  if(arr.length === 0){
+  if (arr.length === 0) {
     return undefined;
   }
 
   let max = arr[0]
 
-  for(let i =1; i < arr.length; i++){
+  for (let i = 1; i < arr.length; i++) {
     let current = arr[i];
 
-    if(current > max){
+    if (current > max) {
       max = current
     }
   }
@@ -453,18 +453,18 @@ max([-1, 6, 3, 2.2, -10, -4]); // 6
 // Do note use the built-in Math.min() function!
 
 
-function min(arr){
+function min(arr) {
 
-  if(arr.length === 0){
+  if (arr.length === 0) {
     return undefined;
   }
 
   let min = arr[0]
 
-  for(let i = 1; i < arr.length; i++){
+  for (let i = 1; i < arr.length; i++) {
     let current = arr[i];
 
-    if(min > current){
+    if (min > current) {
       min = current;
     }
   }
@@ -488,11 +488,11 @@ min([-1, 6, 3, 2.2, -10, -4]); // -10
 // Do not use the built in Array.slice() function!
 
 
-function slice(arr, start, end){
+function slice(arr, start, end) {
 
   let result = [];
 
-  for(let i = start; i < end; i++){
+  for (let i = start; i < end; i++) {
     let current = arr[i];
 
     result.push(current)
@@ -522,22 +522,22 @@ slice([1, 2, 3, 4, 5], 2, 10); // [3, 4, 5]
 
 //pseudocode included because... so far the hardest question 🤪
 
-function concat(arr,...args){
+function concat(arr, ...args) {
 
   //use the spread operator to get the extra arrays
-  var extraArrays=[...args];
+  var extraArrays = [...args];
 
   // outer loop over the extra arrays
   for (var i = 0; i < extraArrays.length; ++i) {
 
     //easy to read variable
-    let currentArr= extraArrays[i];
+    let currentArr = extraArrays[i];
 
     //looping over one array at a time
     for (var j = 0; j < currentArr.length; ++j)
 
-    // push the to our og array (1st argument)
-    arr.push(currentArr[j]);
+      // push the to our og array (1st argument)
+      arr.push(currentArr[j]);
   }
 
   // complete array-concat
@@ -548,7 +548,10 @@ function concat(arr,...args){
 concat([1, 2, 3], [4, 5, 6]); // [1, 2, 3, 4, 5, 6]
 concat([1, 2, 3], [4], [5, 6]); // [1, 2, 3, 4, 5, 6]
 concat([1, 2, 3], [4], [5], [6]); // [1, 2, 3, 4, 5, 6]
-concat([1], [[2], [3]], [4]); // [1, [2], [3], 4]]
+concat([1], [
+  [2],
+  [3]
+], [4]); // [1, [2], [3], 4]]
 
 
 // 021 - Fundamentals: keys
@@ -558,11 +561,11 @@ concat([1], [[2], [3]], [4]); // [1, [2], [3], 4]]
 // Do not use the built in Object.keys() function!
 
 
-function keys(obj){
+function keys(obj) {
 
-  let result =[];
+  let result = [];
 
-  for(let item in obj){
+  for (let item in obj) {
     result.push(item)
   }
 
@@ -572,10 +575,17 @@ function keys(obj){
 
 
 // Examples:
-var obj = { a: 1, b: 2, c: 3 };
+var obj = {
+  a: 1,
+  b: 2,
+  c: 3
+};
 keys(obj); // ["a", "b", "c"]
 
-var obj2 = { first: 'Matt', last: 'Lane' };
+var obj2 = {
+  first: 'Matt',
+  last: 'Lane'
+};
 keys(obj2); // ["first", "last"]
 
 var obj3 = {};
@@ -588,11 +598,11 @@ keys(obj3); // []
 
 // Do not use the built in Object.values() function!
 
-function values(obj){
+function values(obj) {
 
-  let result =[];
+  let result = [];
 
-  for(let item in obj){
+  for (let item in obj) {
     let current = obj[item]
     result.push(obj[item])
   }
@@ -602,10 +612,18 @@ function values(obj){
 }
 
 //Examples:
-var obj = { a: 1, b: 2, c: 3 };
+var obj = {
+  a: 1,
+  b: 2,
+  c: 3
+};
 values(obj); // [1,2,3]
 
-var obj2 = { first: 'Matt', last: 'Lane', isDogOwner: true };
+var obj2 = {
+  first: 'Matt',
+  last: 'Lane',
+  isDogOwner: true
+};
 values(obj2); // ["Matt", "Lane", true]
 
 var obj3 = {};
@@ -619,35 +637,38 @@ values(obj3); // []
 // The function should return a new object with the given key and its value flipped, and all the other key/value pairs unchanged.
 
 
-function swapKeyAndValue(obj,keyToSwap){
+function swapKeyAndValue(obj, keyToSwap) {
 
   var result = {};
 
-  for(let key in obj){
+  for (let key in obj) {
 
-    if (keyToSwap in obj){
+    if (keyToSwap in obj) {
 
-      result[obj[keyToSwap]]=keyToSwap;
+      result[obj[keyToSwap]] = keyToSwap;
     }
 
-    result[key]=obj[key];
+    result[key] = obj[key];
 
   }
-    delete result[keyToSwap];
+  delete result[keyToSwap];
 
 
   return result;
-  }
+}
 
 
 
-  var instructor = { name: 'Elie', job: 'Instructor' };
+var instructor = {
+  name: 'Elie',
+  job: 'Instructor'
+};
 
-  swapKeyAndValue(instructor, 'name');
-  // {Elie: 'name', job: "Instructor"}
+swapKeyAndValue(instructor, 'name');
+// {Elie: 'name', job: "Instructor"}
 
-  swapKeyAndValue(instructor, 'job');
-  // {name: "Elie", Instructor: 'job'}
+swapKeyAndValue(instructor, 'job');
+// {name: "Elie", Instructor: 'job'}
 
 
 //   024 - Fundamentals: entries
@@ -661,21 +682,29 @@ function swapKeyAndValue(obj,keyToSwap){
 // Examples:
 
 
-function entries(obj){
+function entries(obj) {
 
-  var result=[];
+  var result = [];
 
-  for(var key in obj){
-    result.push([key,obj[key]]);
+  for (var key in obj) {
+    result.push([key, obj[key]]);
   }
   return result;
 }
 
-var obj = { a: 1, b: 2, c: 3 };
+var obj = {
+  a: 1,
+  b: 2,
+  c: 3
+};
 entries(obj);
 // [["a",1], ["b",2], ["c",3]]
 
-var obj2 = { first: 'Matt', last: 'Lane', isDogOwner: true };
+var obj2 = {
+  first: 'Matt',
+  last: 'Lane',
+  isDogOwner: true
+};
 entries(obj2);
 // [["first","Matt"], ["last","Lane"], ["isDogOwner",true]]
 
@@ -689,12 +718,12 @@ entries(obj3); // []
 
 // Do not use the built in every function, the tests will fail!
 
-function every(arr, cb){
+function every(arr, cb) {
 
-  for(let i = 0; i < arr.length; i++){
+  for (let i = 0; i < arr.length; i++) {
     let current = arr[i];
 
-    if(!cb(current)){
+    if (!cb(current)) {
       return false
     }
   }
@@ -705,12 +734,12 @@ function every(arr, cb){
 
 // Examples:
 
-every([1, 2, 3, 4, 5], function(val) {
- return val > 0;
+every([1, 2, 3, 4, 5], function (val) {
+  return val > 0;
 }); // true
 
-every([1, 2, 3, 4, 5], function(val) {
- return val < 2;
+every([1, 2, 3, 4, 5], function (val) {
+  return val < 2;
 }); // false
 
 
@@ -720,12 +749,12 @@ every([1, 2, 3, 4, 5], function(val) {
 
 // Do not use the built in some function, the tests will fail!
 
-function some(arr, cb){
+function some(arr, cb) {
 
-  for(let i = 0; i < arr.length; i++){
+  for (let i = 0; i < arr.length; i++) {
     let current = arr[i];
 
-    if(cb(current)){
+    if (cb(current)) {
       return true;
     }
   }
@@ -734,12 +763,12 @@ function some(arr, cb){
 }
 
 // Examples:
-some([1, 2, 3, 4, 5], function(val) {
- return val > 5;
+some([1, 2, 3, 4, 5], function (val) {
+  return val > 5;
 }); // false
 
-some([1, 2, 3, 4, 5], function(val) {
- return val < 2;
+some([1, 2, 3, 4, 5], function (val) {
+  return val < 2;
 }); // true
 
 // 028 - Fundamentals: countIf
@@ -750,14 +779,14 @@ some([1, 2, 3, 4, 5], function(val) {
 
 // Examples:
 
-function countIf(arr, cb){
+function countIf(arr, cb) {
 
   let counter = 0;
 
-  for(let i = 0; i < arr.length; i++){
+  for (let i = 0; i < arr.length; i++) {
     let current = arr[i];
 
-    if(cb(current)){
+    if (cb(current)) {
       counter++
     }
 
@@ -767,16 +796,16 @@ function countIf(arr, cb){
 }
 
 
-countIf([1, 2, 3, 4, 5], function(val) {
- return val > 4;
+countIf([1, 2, 3, 4, 5], function (val) {
+  return val > 4;
 }); // 1
 
-countIf([2, 4, 6, 7], function(val) {
- return val % 2 === 0;
+countIf([2, 4, 6, 7], function (val) {
+  return val % 2 === 0;
 }); // 3
 
-countIf(['Tim', 'Matt', 'Elie'], function(val) {
- return val.length > 3;
+countIf(['Tim', 'Matt', 'Elie'], function (val) {
+  return val.length > 3;
 }); // 2
 
 
@@ -785,11 +814,11 @@ countIf(['Tim', 'Matt', 'Elie'], function(val) {
 
 // Write a function called countValues which accepts an array and a number and returns the number of times that value appears in the array.
 
-function countValues(arr, value){
+function countValues(arr, value) {
   let counter = 0;
 
   arr.forEach((item) => {
-    if(item === value){
+    if (item === value) {
       counter++
     }
     return counter;
@@ -799,8 +828,8 @@ function countValues(arr, value){
 }
 
 // Examples:
-countValues([4,1,4,2,3,4,4], 4) // 4
-countValues([4,1,4,2,3,4,4], 100) // 0
+countValues([4, 1, 4, 2, 3, 4, 4], 4) // 4
+countValues([4, 1, 4, 2, 3, 4, 4], 100) // 0
 countValues([], 1) // 0
 
 
@@ -811,12 +840,12 @@ countValues([], 1) // 0
 
 // Examples:
 
-function squareEvenNumbers(arr){
+function squareEvenNumbers(arr) {
   let sum = 0;
 
   arr.forEach((number) => {
 
-    if(number% 2 === 0){
+    if (number % 2 === 0) {
       sum += (number * number)
     }
 
@@ -836,14 +865,14 @@ squareEvenNumbers([5, 6, 7]); // 36
 
 // Implement a function called multiples that accepts two numbers: x and n. The function should return the first n multiples of the number x. Assume that x is a positive integer.
 
-function multiples(number, times){
+function multiples(number, times) {
 
   let result = [];
   let sum = number;
 
-  while(times > 0){
+  while (times > 0) {
     result.push(sum)
-    sum+=number;
+    sum += number;
     times--
   }
 
@@ -864,16 +893,16 @@ multiples(2, 5) // [2, 4, 6, 8, 10]
 
 // Write a function called pluck, which takes an array of objects and the name of a key. The function should return an array containing the value associated with that key for each object, or undefined if that key is not present in the object.
 
-function pluck(arr, key){
+function pluck(arr, key) {
 
   let result = [];
 
-  for(let i = 0; i < arr.length; i++){
+  for (let i = 0; i < arr.length; i++) {
     let current = arr[i];
 
-    if(key in current){
+    if (key in current) {
       result.push(current[key])
-    } else{
+    } else {
       result.push(undefined)
     }
 
@@ -886,15 +915,28 @@ function pluck(arr, key){
 
 // Examples:
 
-pluck([
-  { name: "Tim" }, { name: "Matt" }, { name: "Elie" }],
- 'name'
+pluck([{
+    name: "Tim"
+  }, {
+    name: "Matt"
+  }, {
+    name: "Elie"
+  }],
+  'name'
 )
 // ["Tim", "Matt", "Elie"]
 
 pluck(
-  [{ name: "Tim", isBoatOwner: true }, { name: "Matt", isBoatOwner: false }, { name: "Elie" }],
- 'isBoatOwner'
+  [{
+    name: "Tim",
+    isBoatOwner: true
+  }, {
+    name: "Matt",
+    isBoatOwner: false
+  }, {
+    name: "Elie"
+  }],
+  'isBoatOwner'
 )
 // [true, false, undefined]
 
@@ -906,24 +948,24 @@ pluck(
 
 // Do not use the build in sort() method - the tests will fail!
 
-function twoHighest(arr){
+function twoHighest(arr) {
   let highest = arr[0];
   let secondHighest = arr[1]
 
-  if(secondHighest > highest){
+  if (secondHighest > highest) {
     let temp = highest;
     highest = secondHighest;
     secondHighest = temp;
   }
 
 
-  for(let i = 2; i < arr.length; i++){
+  for (let i = 2; i < arr.length; i++) {
     let current = arr[i];
 
-    if(current > highest){
+    if (current > highest) {
       secondHighest = highest;
       highest = current;
-    } else if(current > secondHighest){
+    } else if (current > secondHighest) {
       secondHighest = current;
     }
 
@@ -953,20 +995,30 @@ twoHighest([1, 2, 2]) // [2, 2];
 
 // Examples:
 
-function minMaxKeyInObject(obj){
+function minMaxKeyInObject(obj) {
 
   let keys = Object.keys(obj)
 
   let first = Number(keys[0])
-  let last = Number(keys[keys.length -1]);
+  let last = Number(keys[keys.length - 1]);
 
   return [first, last]
 }
 
-minMaxKeyInObject({ 2: 'a', 7: 'b', 1: 'c', 10: 'd', 4: 'e' });
+minMaxKeyInObject({
+  2: 'a',
+  7: 'b',
+  1: 'c',
+  10: 'd',
+  4: 'e'
+});
 // [1, 10]
 
-minMaxKeyInObject({ 1: 'Elie', 4: 'Matt', 2: 'Tim' });
+minMaxKeyInObject({
+  1: 'Elie',
+  4: 'Matt',
+  2: 'Tim'
+});
 // [1, 4]
 
 
@@ -978,21 +1030,28 @@ minMaxKeyInObject({ 1: 'Elie', 4: 'Matt', 2: 'Tim' });
 
 //Examples:
 
-function stringFromObject(obj){
+function stringFromObject(obj) {
 
-  var result=[];
+  var result = [];
 
-  for(let key in obj){
-   result.push(key + ' = ' + obj[key]);
+  for (let key in obj) {
+    result.push(key + ' = ' + obj[key]);
   }
   return result.join(', ');
 }
 
 
-stringFromObject({ a: 1, b: '2' });
+stringFromObject({
+  a: 1,
+  b: '2'
+});
 // "a = 1, b = 2"
 
-stringFromObject({ name: 'Elie', job: 'Instructor', isCatOwner: false });
+stringFromObject({
+  name: 'Elie',
+  job: 'Instructor',
+  isCatOwner: false
+});
 // "name = Elie, job = Instructor, isCatOwner = false"
 
 stringFromObject({});
@@ -1006,21 +1065,19 @@ stringFromObject({});
 
 // A query string, is a way to send data in an HTTP request, you may see it in a URL starting with a question mark. Write a function called toQueryString, which accepts an object and returns a string with each key and value separated by a = and each pair separated by a &. If the value is an array, add another pair to the string with each value
 
-function toQueryString(obj){
+function toQueryString(obj) {
 
   let result = [];
 
-  for(let key in obj){
+  for (let key in obj) {
 
-    if(Array.isArray(obj[key])){
+    if (Array.isArray(obj[key])) {
       let innerArr = obj[key]
 
-      for(let i = 0; i < innerArr.length; i++){
+      for (let i = 0; i < innerArr.length; i++) {
         result.push(key + '=' + innerArr[i])
       }
-    }
-
-    else{
+    } else {
       result.push(key + '=' + obj[key]);
     }
 
@@ -1033,8 +1090,14 @@ function toQueryString(obj){
 
 // Examples:
 toQueryString({}) // ""
-toQueryString({"bar": [ 2, 3], "foo": 1 }) // "bar=2&bar=3&foo=1"
-toQueryString({name: "Elie", "nums": [1,2,3,4]}) // "name=Elie&nums=1&nums=2&nums=3&nums=4"
+toQueryString({
+  "bar": [2, 3],
+  "foo": 1
+}) // "bar=2&bar=3&foo=1"
+toQueryString({
+  name: "Elie",
+  "nums": [1, 2, 3, 4]
+}) // "name=Elie&nums=1&nums=2&nums=3&nums=4"
 
 // Credit - https://www.codewars.com/kata/do-you-know-how-to-make-query-string
 
@@ -1043,12 +1106,12 @@ toQueryString({name: "Elie", "nums": [1,2,3,4]}) // "name=Elie&nums=1&nums=2&num
 
 // Write a function called countNumbers, which accepts an array of strings. The function should return a count of the number of strings in the array that can be successfully converted into a number. For example, the string "1" can be successfully converted to the number 1, but the string "hello" cannot be converted into a number.
 
-function countNumbers(arr){
+function countNumbers(arr) {
   let counter = 0;
 
   arr.forEach((item) => {
 
-    if(item === '0' || Number(item)){
+    if (item === '0' || Number(item)) {
       counter++
     }
     return counter
@@ -1058,10 +1121,10 @@ function countNumbers(arr){
 }
 
 // Examples:
-countNumbers(['a','b','3','awesome','4']); // 2
+countNumbers(['a', 'b', '3', 'awesome', '4']); // 2
 countNumbers(['32', '55', 'awesome', 'test', '100']); // 3
 countNumbers([]); // 0
-countNumbers(['0','1','3','NaN']); // 3
+countNumbers(['0', '1', '3', 'NaN']); // 3
 countNumbers(['7', '12', 'a', '', '6', '8', ' ']); // 4
 
 
@@ -1071,11 +1134,11 @@ countNumbers(['7', '12', 'a', '', '6', '8', ' ']); // 4
 function generatePairs(number) {
   let result = [];
 
-  for(let i =0 ; i <= number ; i++){
+  for (let i = 0; i <= number; i++) {
 
-    for(let j = i ; j <= number ; j++){
+    for (let j = i; j <= number; j++) {
 
-        result.push([i, j]);
+      result.push([i, j]);
     }
   }
 
@@ -1101,44 +1164,64 @@ generatePairs(0) // [ [0, 0]]
 
 // Examples:
 
-function objectCompare(one, two){
+function objectCompare(one, two) {
 
-  for(let i = 0; i < one.length; i++){
+  for (let i = 0; i < one.length; i++) {
     let currentOne = one[i];
     let currentTwo = two[i]
 
-    if(currentOne !== currentTwo){
+    if (currentOne !== currentTwo) {
       return false;
     }
   }
 }
-var arr1 = [1,2,3,4]
-var arr2 = [1,2,3,4]
+var arr1 = [1, 2, 3, 4]
+var arr2 = [1, 2, 3, 4]
 
 objectCompare(arr1, arr2) // true
 
-var arr3 = [1,2,3,4]
-var arr4 = [4,3,2,1]
+var arr3 = [1, 2, 3, 4]
+var arr4 = [4, 3, 2, 1]
 
 objectCompare(arr3, arr4) // false
 
-var obj1 = {favNum: 22, favColor: "green"}
-var obj2 = {favColor: "green", favNum: 22}
+var obj1 = {
+  favNum: 22,
+  favColor: "green"
+}
+var obj2 = {
+  favColor: "green",
+  favNum: 22
+}
 
 objectCompare(obj1, obj2) // true
 
-var obj3 = {favNum: 22, favColor: "green"}
-var obj4 = {favNum: 22, favColor: "blue"}
+var obj3 = {
+  favNum: 22,
+  favColor: "green"
+}
+var obj4 = {
+  favNum: 22,
+  favColor: "blue"
+}
 
 objectCompare(obj3, obj4) // false
 
-var obj5 = {favNumbers: [1,2,3,4]}
-var obj6 = {favNumbers: [1,2,3,4]}
+var obj5 = {
+  favNumbers: [1, 2, 3, 4]
+}
+var obj6 = {
+  favNumbers: [1, 2, 3, 4]
+}
 
 objectCompare(obj5, obj6) // true
 
-var obj7 = {favNumbers: [1,2,3,4,5]}
-var obj8 = {favNumbers: [1,2,3,4]}
+var obj7 = {
+  favNumbers: [1, 2, 3, 4, 5]
+}
+var obj8 = {
+  favNumbers: [1, 2, 3, 4]
+}
 
 objectCompare(obj7, obj8) // false
 
@@ -1149,27 +1232,27 @@ objectCompare(obj7, obj8) // false
 // Write a function called findTheDuplicate which accepts an array of numbers containing a single duplicate. The function returns the number which is a duplicate or undefined if there are no duplicates.
 // Examples:
 
-function findTheDuplicate(arr){
+function findTheDuplicate(arr) {
 
   let map = {};
 
-  for(let i = 0; i< arr.length; i ++){
+  for (let i = 0; i < arr.length; i++) {
     let current = arr[i];
 
-    if(map[current] === undefined){
+    if (map[current] === undefined) {
       map[current] = 1;
-    } else{
+    } else {
       map[current]++;
     }
 
   }
 
 
-  for(let num in map){
+  for (let num in map) {
 
     // console.log(num)
 
-    if(map[num] > 1){
+    if (map[num] > 1) {
       return Number(num);
     }
 
@@ -1178,9 +1261,9 @@ function findTheDuplicate(arr){
   return undefined;
 }
 
-findTheDuplicate([1,2,1,4,3,12]) // 1
-findTheDuplicate([6,1,9,5,3,4,9]) // 9
-findTheDuplicate([2,1,3,4]) // undefined
+findTheDuplicate([1, 2, 1, 4, 3, 12]) // 1
+findTheDuplicate([6, 1, 9, 5, 3, 4, 9]) // 9
+findTheDuplicate([2, 1, 3, 4]) // undefined
 
 
 // 041 - Problem Solving 2: totalCaps
@@ -1193,13 +1276,13 @@ let totalCaps = (arr) => {
 
   let counter = 0;
 
-  for(let i = 0; i < arr.length; i++){
+  for (let i = 0; i < arr.length; i++) {
     let word = arr[i];
 
-    for(let j = 0; j < word.length; j++){
+    for (let j = 0; j < word.length; j++) {
       let letter = word[j];
 
-      if(letter === letter.toUpperCase()){
+      if (letter === letter.toUpperCase()) {
         // console.log(`we found a CAP ${letter}`)
         counter++
       }
@@ -1214,3 +1297,79 @@ let totalCaps = (arr) => {
 totalCaps(["AwesomE", "ThIngs", "hAppEning", "HerE"]) // 8
 totalCaps(["Elie", "Matt", "Tim"]) // 3
 totalCaps(["hello", "world"]) // 0
+
+
+
+// 042 - Problem Solving 2: highestScoringWord
+
+// Given a string of words, your goal is to find the highest scoring word in the string. a is worth 1 point, b is worth 2 points, c is worth 3 points,
+//and so on, all the way up until z, which is worth 26 points. You can assume that strings will consist only of lowercase letters and spaces.
+// In the event that two words have the same score, return the word that appears first in the string.
+
+let alphabet = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 4,
+  e: 5,
+  f: 6,
+  g: 7,
+  h: 8,
+  i: 9,
+  j: 10,
+  k: 11,
+  l: 12,
+  m: 13,
+  n: 14,
+  o: 15,
+  p: 16,
+  q: 17,
+  r: 18,
+  s: 19,
+  t: 20,
+  u: 21,
+  v: 22,
+  w: 23,
+  x: 24,
+  y: 25,
+  z: 26
+}
+
+
+let highestScoringWord = (string) => {
+
+  let wordsArray = string.split(' ');
+  let score = 0;
+  let highestScoring;
+
+
+  for(let i = 0; i < wordsArray.length; i++){
+    let currentWord = wordsArray[i];
+    let currentScore = 0;
+
+    for(let j = 0; j < currentWord.length; j++){
+      let letter = currentWord[j]
+      currentScore += alphabet[letter]
+
+    }
+
+    if(currentScore >= score){
+      score = currentScore
+      highestScoring = currentWord
+    }
+  }
+
+  return highestScoring;
+}
+
+
+// Examples:
+highestScoringWord("a b c d e f"); // "f"
+highestScoringWord("world hello"); // "world"
+highestScoringWord("go ahead make my day"); // "my"
+highestScoringWord("there is no place like home"); // "there"
+highestScoringWord("aaaaaa bbb cc f"); // "aaaaaa"
+highestScoringWord("bbb cc f aaaaaa"); // "bbb"
+highestScoringWord("this sentence has two highest scoring words"); // "sentence"
+
+// Credit - https://www.codewars.com/kata/highest-scoring-word
