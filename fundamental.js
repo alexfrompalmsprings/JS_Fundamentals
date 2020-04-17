@@ -1343,17 +1343,17 @@ let highestScoringWord = (string) => {
   let highestScoring;
 
 
-  for(let i = 0; i < wordsArray.length; i++){
+  for (let i = 0; i < wordsArray.length; i++) {
     let currentWord = wordsArray[i];
     let currentScore = 0;
 
-    for(let j = 0; j < currentWord.length; j++){
+    for (let j = 0; j < currentWord.length; j++) {
       let letter = currentWord[j]
       currentScore += alphabet[letter]
 
     }
 
-    if(currentScore >= score){
+    if (currentScore >= score) {
       score = currentScore
       highestScoring = currentWord
     }
@@ -1384,37 +1384,72 @@ highestScoringWord("this sentence has two highest scoring words"); // "sentence"
 
 let separate = (arr) => {
 
-    let result;
-    let dogs = [];
-    let cats = [];
-    let water = [];
+  let result;
+  let dogs = [];
+  let cats = [];
+  let water = [];
 
 
-    arr.forEach((item) => {
-      if(item === 'dog'){
-        dogs.push(item)
-      }
+  arr.forEach((item) => {
+    if (item === 'dog') {
+      dogs.push(item)
+    }
 
-      if(item === 'water'){
-        water.push(item)
-      }
+    if (item === 'water') {
+      water.push(item)
+    }
 
-      if(item === 'cat'){
-        cats.push(item)
-      }
-    })
+    if (item === 'cat') {
+      cats.push(item)
+    }
+  })
 
 
 
-    result = cats.concat(water).concat(dogs)
+  result = cats.concat(water).concat(dogs)
 
   return result;
 }
 
 
-separate(['dog','cat','water']) // ['cat','water','dog']
+separate(['dog', 'cat', 'water']) // ['cat','water','dog']
 
-separate(['dog','cat','water','cat']) // ['cat', 'cat', 'water', 'dog'])
+separate(['dog', 'cat', 'water', 'cat']) // ['cat', 'cat', 'water', 'dog'])
 
-separate(['cat','cat','water','dog','water','cat','water','dog'])
-  // ['cat','cat','cat','water','water','water','dog','dog']
+separate(['cat', 'cat', 'water', 'dog', 'water', 'cat', 'water', 'dog'])
+// ['cat','cat','cat','water','water','water','dog','dog']
+
+
+// 044 - Problem Solving 2: findGreaterNumbers
+
+// Write a function called findGreaterNumbers which accepts an array and returns the number of times a number is followed by a larger number.
+
+// Note that the numbers don 't need to be next to each other in the array.
+// Any pair where the second number comes later in the array and is also the larger number should count.
+
+let findGreaterNumbers = (arr) => {
+
+  let counter = 0;
+
+  for(let i = arr.length -1; i >= 0; i--){
+    let current = arr[i];
+
+    for(let j = i -1; j >= 0; j--){
+      let compare = arr[j];
+
+      // console.log(current, compare)
+      if(current > compare){
+        counter++
+      }
+    }
+  }
+
+  console.log(counter)
+  return counter;
+}
+
+//examples
+findGreaterNumbers([1, 2, 3]) // 3 (2 > 1, 3 > 2, and 3 > 1)
+findGreaterNumbers([6, 1, 2, 7]) // 4
+findGreaterNumbers([5, 4, 3, 2, 1]) // 0
+findGreaterNumbers([]) // 0

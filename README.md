@@ -45,6 +45,7 @@ This repo also has some coding challenges. This is the list of the 'Problem Solv
 - [Problem Solving Challenge: totalCaps](#totalCaps)
 - [Problem Solving Challenge: highestScoringWord](#highestScoringWord)
 - [Problem Solving Challenge: separate](#separate)
+- [Problem Solving Challenge: findGreaterNumbers](#findGreaterNumbers)
 
 
 ## JS Fundamentals
@@ -1303,9 +1304,6 @@ highestScoringWord("this sentence has two highest scoring words"); // "sentence"
 
 ```
 
-
-
-
 ### HighestScoringWord
 ```JavaScript
 // Dogs don't get along with cats, and cats don't get along with dogs.
@@ -1351,4 +1349,42 @@ separate(['dog','cat','water','cat']) // ['cat', 'cat', 'water', 'dog'])
 
 separate(['cat','cat','water','dog','water','cat','water','dog'])
   // ['cat','cat','cat','water','water','water','dog','dog']
+  ```
+
+
+
+### findGreaterNumbers
+```JavaScript
+
+// Write a function called findGreaterNumbers which accepts an array and returns the number of times a number is followed by a larger number.
+
+// Note that the numbers don 't need to be next to each other in the array.
+// Any pair where the second number comes later in the array and is also the larger number should count.
+
+let findGreaterNumbers = (arr) => {
+
+  let counter = 0;
+
+  for(let i = arr.length -1; i >= 0; i--){
+    let current = arr[i];
+
+    for(let j = i -1; j >= 0; j--){
+      let compare = arr[j];
+
+      // console.log(current, compare)
+      if(current > compare){
+        counter++
+      }
+    }
+  }
+
+  console.log(counter)
+  return counter;
+}
+
+//examples
+findGreaterNumbers([1, 2, 3]) // 3 (2 > 1, 3 > 2, and 3 > 1)
+findGreaterNumbers([6, 1, 2, 7]) // 4
+findGreaterNumbers([5, 4, 3, 2, 1]) // 0
+findGreaterNumbers([]) // 0
   ```
