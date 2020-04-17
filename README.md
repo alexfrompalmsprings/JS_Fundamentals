@@ -1388,3 +1388,48 @@ findGreaterNumbers([6, 1, 2, 7]) // 4
 findGreaterNumbers([5, 4, 3, 2, 1]) // 0
 findGreaterNumbers([]) // 0
   ```
+
+
+
+### numInversions
+```JavaScript
+// Given an array of numbers (not necessarily unique values), your goal is to measure how close the array is to being sorted by counting the number of inversions it has. An inversion occurs when two numbers in the array are out of order.
+// Implement a function called numInversions which counts the number of inversions in the array.
+
+let numInversions = (arr) => {
+  let counter = 0;
+
+  for(let i = arr.length -1; i >= 0; i--){
+    let current = arr[i];
+
+    for(let j = i -1; j >= 0; j--){
+      let compare = arr[j];
+
+      // console.log(current, compare)
+      if(current < compare){
+        counter++
+      }
+    }
+  }
+
+  return counter;
+}
+
+
+// Examples:
+numInversions([]); // 0
+numInversions([5]); // 0
+numInversions([1,2]); // 0
+numInversions([2,1]); // 1
+numInversions([1,2,3]); // 0
+numInversions([1,3,2]); // 1
+numInversions([3,1,2]); // 2
+numInversions([3,2,1]); // 3
+numInversions([5,3,4,1,2]); // 8
+numInversions([1,1,1,1]); // 0
+numInversions([2,2,1,1]); // 4
+numInversions([3,3,3,2,2,1]); // 11
+numInversions([8, 6, 6, 1, 1, 1, 3, 4, 2]); // 22
+
+// Credit - https://www.codewars.com/kata/calculate-number-of-inversions-in-array
+  ```
