@@ -46,6 +46,7 @@ This repo also has some coding challenges. This is the list of the 'Problem Solv
 - [Problem Solving Challenge: highestScoringWord](#highestScoringWord)
 - [Problem Solving Challenge: separate](#separate)
 - [Problem Solving Challenge: findGreaterNumbers](#findGreaterNumbers)
+- [Problem Solving Challenge: numInversions](#numInversions)
 
 
 ## JS Fundamentals
