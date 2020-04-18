@@ -1503,12 +1503,27 @@ numInversions([8, 6, 6, 1, 1, 1, 3, 4, 2]); // 22
 
 function removeDuplicatesFromSorted(arr){
 
+  for(let i = 2; i < arr.length; i++){
+
+    let currentNum = arr[i];
+    let previous = arr[i-1]
+    let previousPrevious = arr[i-2];
+
+    if(currentNum === previous && currentNum === previousPrevious){
+      // console.log(`found you ${currentNum}`)
+
+      arr.splice(i, 1)
+      // console.log(arr.length)
+      i--
+    }
+  }
+  return arr.length;
 }
 
 
 // Examples:
 removeDuplicatesFromSorted([1, 1, 1, 2, 2, 3]); // 5
-// removeDuplicatesFromSorted([2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]); // 8
-// removeDuplicatesFromSorted([4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]); // 2
-// removeDuplicatesFromSorted([1, 2, 3, 4, 5, 6]); // 6
-// removeDuplicatesFromSorted([]); // 0
+removeDuplicatesFromSorted([2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]); // 8
+removeDuplicatesFromSorted([4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]); // 2
+removeDuplicatesFromSorted([1, 2, 3, 4, 5, 6]); // 6
+removeDuplicatesFromSorted([]); // 0
