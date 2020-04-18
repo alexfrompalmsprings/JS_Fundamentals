@@ -1431,14 +1431,14 @@ let findGreaterNumbers = (arr) => {
 
   let counter = 0;
 
-  for(let i = arr.length -1; i >= 0; i--){
+  for (let i = arr.length - 1; i >= 0; i--) {
     let current = arr[i];
 
-    for(let j = i -1; j >= 0; j--){
+    for (let j = i - 1; j >= 0; j--) {
       let compare = arr[j];
 
       // console.log(current, compare)
-      if(current > compare){
+      if (current > compare) {
         counter++
       }
     }
@@ -1462,14 +1462,14 @@ findGreaterNumbers([]) // 0
 let numInversions = (arr) => {
   let counter = 0;
 
-  for(let i = arr.length -1; i >= 0; i--){
+  for (let i = arr.length - 1; i >= 0; i--) {
     let current = arr[i];
 
-    for(let j = i -1; j >= 0; j--){
+    for (let j = i - 1; j >= 0; j--) {
       let compare = arr[j];
 
       // console.log(current, compare)
-      if(current < compare){
+      if (current < compare) {
         counter++
       }
     }
@@ -1482,16 +1482,16 @@ let numInversions = (arr) => {
 // Examples:
 numInversions([]); // 0
 numInversions([5]); // 0
-numInversions([1,2]); // 0
-numInversions([2,1]); // 1
-numInversions([1,2,3]); // 0
-numInversions([1,3,2]); // 1
-numInversions([3,1,2]); // 2
-numInversions([3,2,1]); // 3
-numInversions([5,3,4,1,2]); // 8
-numInversions([1,1,1,1]); // 0
-numInversions([2,2,1,1]); // 4
-numInversions([3,3,3,2,2,1]); // 11
+numInversions([1, 2]); // 0
+numInversions([2, 1]); // 1
+numInversions([1, 2, 3]); // 0
+numInversions([1, 3, 2]); // 1
+numInversions([3, 1, 2]); // 2
+numInversions([3, 2, 1]); // 3
+numInversions([5, 3, 4, 1, 2]); // 8
+numInversions([1, 1, 1, 1]); // 0
+numInversions([2, 2, 1, 1]); // 4
+numInversions([3, 3, 3, 2, 2, 1]); // 11
 numInversions([8, 6, 6, 1, 1, 1, 3, 4, 2]); // 22
 
 // Credit - https://www.codewars.com/kata/calculate-number-of-inversions-in-array
@@ -1501,15 +1501,15 @@ numInversions([8, 6, 6, 1, 1, 1, 3, 4, 2]); // 22
 // 046 - Problem Solving 2: removeDuplicatesFromSorted
 // Given a sorted array of numbers, return the length of the subarray formed by allowing each number to appear at most two times.
 
-function removeDuplicatesFromSorted(arr){
+function removeDuplicatesFromSorted(arr) {
 
-  for(let i = 2; i < arr.length; i++){
+  for (let i = 2; i < arr.length; i++) {
 
     let currentNum = arr[i];
-    let previous = arr[i-1]
-    let previousPrevious = arr[i-2];
+    let previous = arr[i - 1]
+    let previousPrevious = arr[i - 2];
 
-    if(currentNum === previous && currentNum === previousPrevious){
+    if (currentNum === previous && currentNum === previousPrevious) {
       // console.log(`found you ${currentNum}`)
 
       arr.splice(i, 1)
@@ -1527,3 +1527,67 @@ removeDuplicatesFromSorted([2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]); // 8
 removeDuplicatesFromSorted([4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]); // 2
 removeDuplicatesFromSorted([1, 2, 3, 4, 5, 6]); // 6
 removeDuplicatesFromSorted([]); // 0
+
+
+// 047 - Problem Solving 2: isAlternate
+
+// Create a function isAlt that accepts a string as an argument and validates whether the vowels (a, e, i, o, u) and consonants are in alternate order.
+
+let alphabetTrueFalse = {
+  a: true,
+  b: false,
+  c: false,
+  d: false,
+  e: true,
+  f: false,
+  g: false,
+  h: false,
+  i: true,
+  j: false,
+  k: false,
+  l: false,
+  m: false,
+  n: false,
+  o: true,
+  p: false,
+  q: false,
+  r: false,
+  s: false,
+  t: false,
+  u: true,
+  v: false,
+  w: false,
+  x: false,
+  y: false,
+  z: false
+}
+
+
+function isAlt(str) {
+
+  for (let i = 0; i < str.length; i++) {
+    let current = str[i];
+    let next = str[i + 1];
+
+    // console.log('######')
+    // console.log(current, next)
+    // console.log(alphabetTrueFalse[current], alphabetTrueFalse[next])
+    // console.log('######')
+
+    if (alphabetTrueFalse[current] === alphabetTrueFalse[next]) {
+      console.log('this breaks our alt word', current, next)
+      return false
+    }
+
+  }
+
+  return true;
+}
+
+
+// Examples:
+console.log(isAlt("amazon")) // true
+console.log(isAlt("apple")) // false
+console.log(isAlt("banana")) // true
+
+// Credit - https://www.codewars.com/kata/are-we-alternate

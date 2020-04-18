@@ -48,6 +48,7 @@ This repo also has some coding challenges. This is the list of the 'Problem Solv
 - [Problem Solving Challenge: findGreaterNumbers](#findGreaterNumbers)
 - [Problem Solving Challenge: numInversions](#numInversions)
 - [Problem Solving Challenge: removeDuplicatesFromSorted](#removeDuplicatesFromSorted)
+- [Problem Solving Challenge: isAlternate](#isAlternate)
 
 
 ## JS Fundamentals
@@ -1467,4 +1468,64 @@ removeDuplicatesFromSorted([2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]); // 8
 removeDuplicatesFromSorted([4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]); // 2
 removeDuplicatesFromSorted([1, 2, 3, 4, 5, 6]); // 6
 removeDuplicatesFromSorted([]); // 0
+  ```
+
+  ### isAlternate
+```JavaScript
+
+// Create a function isAlt that accepts a string as an argument and validates whether the vowels (a, e, i, o, u) and consonants are in alternate order.
+
+let alphabetTrueFalse = {
+  a: true,
+  b: false,
+  c: false,
+  d: false,
+  e: true,
+  f: false,
+  g: false,
+  h: false,
+  i: true,
+  j: false,
+  k: false,
+  l: false,
+  m: false,
+  n: false,
+  o: true,
+  p: false,
+  q: false,
+  r: false,
+  s: false,
+  t: false,
+  u: true,
+  v: false,
+  w: false,
+  x: false,
+  y: false,
+  z: false
+}
+
+
+function isAlt(str) {
+
+  for (let i = 0; i < str.length; i++) {
+    let current = str[i];
+    let next = str[i + 1];
+
+    if (alphabetTrueFalse[current] === alphabetTrueFalse[next]) {
+      return false
+    }
+
+  }
+
+  return true;
+}
+
+
+// Examples:
+isAlt("amazon") // true
+isAlt("apple") // false
+isAlt("banana") // true
+
+// Credit - https://www.codewars.com/kata/are-we-alternate
+
   ```
