@@ -1563,3 +1563,45 @@ threeOddNumbers([5, 2, 1]) // false
 threeOddNumbers([1, 2, 3, 3, 2]) // false
 
   ```
+
+  ### threeOddNumbers
+```JavaScript
+  // Given an array of unique numbers, return a new array of rankings of the original array. For example, if your input array is [10, 5, 20], the output should be [2, 3, 1], since 10 is the second largest number, 5 is the third largest, and 20 is the largest.
+
+
+//this question give me a couple of headaches. I added the pseudocode in case anyone wants to follow it
+function rankings(arr) {
+
+  //container variable... I will be pushing numbers here
+  let result = [];
+  //sort the array so we can get the rankings
+  let sorted = arr.slice().sort((a, b) => b - a)
+
+  //loop over the original array
+  for(let i = 0; i < arr.length; i++){
+    // loop over the sorted array
+    for(let j = 0; j < sorted.length; j++){
+
+      //conditional statement to see if both are equal to each other
+      if(arr[i] === sorted[j]){
+        //push 'j' to the result container but remember to add a one...the rankings do not have ZERO
+        result.push(j+1)
+        console.log(result)
+      }
+
+
+    }
+  }
+  //return the result
+  return result;
+}
+
+
+// Examples:
+rankings([10, 5, 20]); // [2, 3, 1]
+rankings([6, 8, 1, 12, 4, 3, 9]); // [4, 3, 7, 1, 5, 6, 2]
+rankings([100]); // [1]
+rankings([4, 2, 3, 1]); // [1, 3, 2, 4]
+
+// Credit - https://www.codewars.com/kata/ranking-system - this Kata was written by a former Rithm student!
+```
