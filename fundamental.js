@@ -1644,7 +1644,6 @@ function rankings(arr) {
       if(arr[i] === sorted[j]){
         //push 'j' to the result container but remember to add a one...the rankings do not have ZERO
         result.push(j+1)
-        console.log(result)
       }
 
 

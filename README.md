@@ -50,6 +50,7 @@ This repo also has some coding challenges. This is the list of the 'Problem Solv
 - [Problem Solving Challenge: removeDuplicatesFromSorted](#removeDuplicatesFromSorted)
 - [Problem Solving Challenge: isAlternate](#isAlternate)
 - [Problem Solving Challenge: threeOddNumbers](#threeOddNumbers)
+- [Problem Solving Challenge: rankingSystem](#rankingSystem)
 
 
 ## JS Fundamentals
@@ -1564,7 +1565,7 @@ threeOddNumbers([1, 2, 3, 3, 2]) // false
 
   ```
 
-  ### threeOddNumbers
+  ### rankingSystem
 ```JavaScript
   // Given an array of unique numbers, return a new array of rankings of the original array. For example, if your input array is [10, 5, 20], the output should be [2, 3, 1], since 10 is the second largest number, 5 is the third largest, and 20 is the largest.
 
