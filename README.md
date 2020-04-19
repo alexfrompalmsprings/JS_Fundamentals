@@ -51,6 +51,7 @@ This repo also has some coding challenges. This is the list of the 'Problem Solv
 - [Problem Solving Challenge: isAlternate](#isAlternate)
 - [Problem Solving Challenge: threeOddNumbers](#threeOddNumbers)
 - [Problem Solving Challenge: rankingSystem](#rankingSystem)
+- [Problem Solving Challenge: removeVowels](#removeVowels)
 
 
 ## JS Fundamentals
@@ -1605,4 +1606,41 @@ rankings([100]); // [1]
 rankings([4, 2, 3, 1]); // [1, 3, 2, 4]
 
 // Credit - https://www.codewars.com/kata/ranking-system - this Kata was written by a former Rithm student!
+```
+
+  ### RemoveVowels
+```JavaScript
+// Write a function called removeVowels which will accept a string and return a new string with all the vowels removed. You should not consider "y" to be a vowel.
+
+let vowels = {
+  a: true,
+  e: true,
+  i: true,
+  o: true,
+  u: true
+}
+
+function removeVowels(str) {
+  let result = ''
+
+  for(let index = 0; index < str.length; index++){
+    let letter = str[index]
+
+    if(!vowels[letter]){
+      result+=letter
+      console.log(result)
+    }
+
+  }
+
+  return result;
+}
+
+
+// Examples:
+removeVowels("Hello!"); // "Hll!"
+removeVowels("Tomatoes"); // "Tmts"
+removeVowels("Reverse Vowels In The String"); // "Rvrs Vwls n Th Strng"
+removeVowels("aeiou"); // ""
+removeVowels("why try, shy fly?"); // "why try, shy fly?"
 ```

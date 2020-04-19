@@ -1636,14 +1636,14 @@ function rankings(arr) {
   let sorted = arr.slice().sort((a, b) => b - a)
 
   //loop over the original array
-  for(let i = 0; i < arr.length; i++){
+  for (let i = 0; i < arr.length; i++) {
     // loop over the sorted array
-    for(let j = 0; j < sorted.length; j++){
+    for (let j = 0; j < sorted.length; j++) {
 
       //conditional statement to see if both are equal to each other
-      if(arr[i] === sorted[j]){
+      if (arr[i] === sorted[j]) {
         //push 'j' to the result container but remember to add a one...the rankings do not have ZERO
-        result.push(j+1)
+        result.push(j + 1)
       }
 
 
@@ -1661,3 +1661,39 @@ rankings([100]); // [1]
 rankings([4, 2, 3, 1]); // [1, 3, 2, 4]
 
 // Credit - https://www.codewars.com/kata/ranking-system - this Kata was written by a former Rithm student!
+
+// 050 - Problem Solving 2: removeVowels
+
+// Write a function called removeVowels which will accept a string and return a new string with all the vowels removed. You should not consider "y" to be a vowel.
+
+let vowels = {
+  a: true,
+  e: true,
+  i: true,
+  o: true,
+  u: true
+}
+
+function removeVowels(str) {
+  let result = ''
+
+  for(let index = 0; index < str.length; index++){
+    let letter = str[index]
+
+    if(!vowels[letter]){
+      result+=letter
+      console.log(result)
+    }
+
+  }
+
+  return result;
+}
+
+
+// Examples:
+removeVowels("Hello!"); // "Hll!"
+removeVowels("Tomatoes"); // "Tmts"
+removeVowels("Reverse Vowels In The String"); // "Rvrs Vwls n Th Strng"
+removeVowels("aeiou"); // ""
+removeVowels("why try, shy fly?"); // "why try, shy fly?"
