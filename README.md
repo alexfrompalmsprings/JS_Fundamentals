@@ -49,6 +49,7 @@ This repo also has some coding challenges. This is the list of the 'Problem Solv
 - [Problem Solving Challenge: numInversions](#numInversions)
 - [Problem Solving Challenge: removeDuplicatesFromSorted](#removeDuplicatesFromSorted)
 - [Problem Solving Challenge: isAlternate](#isAlternate)
+- [Problem Solving Challenge: threeOddNumbers](#threeOddNumbers)
 
 
 ## JS Fundamentals
@@ -1527,5 +1528,38 @@ isAlt("apple") // false
 isAlt("banana") // true
 
 // Credit - https://www.codewars.com/kata/are-we-alternate
+
+  ```
+
+  ### threeOddNumbers
+```JavaScript
+// Write a function called threeOddNumbers, which accepts an array of numbers and returns true if any three consecutive numbers sum to an odd number.
+
+function threeOddNumbers(arr) {
+
+  let sum = 0;
+
+  for (let i = 0; i < arr.length -2; i++) {
+    let first = arr[i];
+    let second = arr[i + 1];
+    let third = arr[i + 2];
+
+    sum = first + second + third;
+
+    if(sum % 2 !== 0){
+      console.log('found')
+      return true;
+    }
+
+  }
+  return false;
+}
+
+
+// Examples:
+threeOddNumbers([1, 2, 3, 4 ,5]) // true
+threeOddNumbers([0, -2, 4, 1, 9, 12, 4, 1, 0]) // true
+threeOddNumbers([5, 2, 1]) // false
+threeOddNumbers([1, 2, 3, 3, 2]) // false
 
   ```
